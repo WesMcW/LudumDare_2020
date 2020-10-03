@@ -40,7 +40,8 @@ public class Networking : MonoBehaviour
     {
         List<Score> highScores = new List<Score>();
         JSONObject m = evt.data.GetField("names");
-        
+        Debug.Log(m);
+
         //string[] names = evt.data.GetField("names");
 
     }

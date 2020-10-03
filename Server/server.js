@@ -45,6 +45,7 @@ io.sockets.on('connection', (socket) => {
         );
 
         HighScores = new Map(HighScores.sort());
+        console.log(score.name + ' | ' + score.number + ' saved.');
     });
 
     socket.on('disconnect', () => {
