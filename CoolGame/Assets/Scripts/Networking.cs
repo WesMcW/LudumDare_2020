@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SocketIO;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Networking : MonoBehaviour
 {
     public static Networking inst;
 
     SocketIOComponent socket;
+    HighScoreFunctions hsf;
 
     int highScoreLoadIndex = 0;
     List<HighScore> highScores;
@@ -18,19 +20,16 @@ public class Networking : MonoBehaviour
         else inst = this;
 
         DontDestroyOnLoad(gameObject);
+
+        socket = GetComponent<SocketIOComponent>();
+        socket.Connect();
     }
 
     void Start()
     {
-        socket = GetComponent<SocketIOComponent>();
-
-        // The lines below setup 'listener' functions
         socket.On("connectionmessage", onConnectionEstabilished);
-        socket.On("serverMessage", serverMessage);
-
         socket.On("LoadScore", LoadScore);
-
-        socket.Connect();
+        socket.On("ScoresUpdated", SendToUI);
     }
 
     // This is the listener function definition
@@ -38,11 +37,6 @@ public class Networking : MonoBehaviour
     {
         Debug.Log("Player is connected: " + evt.data.GetField("id"));
         //SendScore("coolname", 3.2345F);
-    }
-
-    void serverMessage(SocketIOEvent evt)
-    {
-        Debug.Log("woot");
     }
 
     public void button(int num)
@@ -83,8 +77,10 @@ public class Networking : MonoBehaviour
         //Invoke("LoadScores", 2F);
     }
 
-    public void LoadScores()
+    public void LoadScores(HighScoreFunctions sendTo)
     {
+        hsf = sendTo;
+
         highScoreLoadIndex = 0;
         highScores = new List<HighScore>();
 
@@ -95,21 +91,21 @@ public class Networking : MonoBehaviour
             highScoreLoadIndex++;
         }
 
-        // do something with the scores here
+        Debug.Log("Scores loaded.");
 
-        //Invoke("DebugScores", 2F);
+        //StartCoroutine("SendToUI", sendTo);
     }
 
-    public void DebugScores()
+    void SendToUI(SocketIOEvent evt)
     {
-        Debug.Log("== High Scores ==");
-
         if (highScores.Count > 0)
         {
             for (int i = 0; i < highScores.Count; i++)
             {
                 Debug.Log(highScores[i].name + " got a score of " + highScores[i].score);
             }
+
+            hsf.ReceiveScores(highScores);
         }
         else Debug.LogError("no highscores found");
     }
