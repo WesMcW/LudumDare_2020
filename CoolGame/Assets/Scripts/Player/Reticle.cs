@@ -14,7 +14,7 @@ public class Reticle : MonoBehaviour
     public float growSpeed;
     public float shrinkSpeed;
 
-    private float currentSize;
+    public float currentSize;
 
     private void Start()
     {
@@ -32,7 +32,7 @@ public class Reticle : MonoBehaviour
             currentSize = Mathf.Lerp(currentSize, restingSize, Time.deltaTime * shrinkSpeed);
         }
 
-        reticle.sizeDelta = new Vector2(currentSize, currentSize);
+        reticle.sizeDelta = new Vector2(currentSize, currentSize) * 50F;
     }
 
     bool isMoving

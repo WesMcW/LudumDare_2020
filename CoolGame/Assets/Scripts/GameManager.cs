@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
             if (currentGun > -1) guns[currentGun].SetActive(false);
             guns[rand].SetActive(true);
             ret.activeGun = guns[rand].GetComponent<Gun>();
+            guns[rand].GetComponent<Gun>().SetReticle();
 
             guns.RemoveAt(rand);
             currentGun = rand;
