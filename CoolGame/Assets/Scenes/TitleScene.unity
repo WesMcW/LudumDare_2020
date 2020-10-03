@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1309,6 +1309,7 @@ GameObject:
   - component: {fileID: 864947819}
   - component: {fileID: 864947821}
   - component: {fileID: 864947820}
+  - component: {fileID: 864947822}
   m_Layer: 5
   m_Name: ScoresBox
   m_TagString: Untagged
@@ -1375,6 +1376,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864947818}
   m_CullTransparentMesh: 0
+--- !u!114 &864947822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864947818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3d0ce6a4133794ab4170b4e058b78f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameList: {fileID: 1727229528}
+  scoreList: {fileID: 2146443343}
 --- !u!1 &925181905
 GameObject:
   m_ObjectHideFlags: 0

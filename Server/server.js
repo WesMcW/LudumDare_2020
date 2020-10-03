@@ -32,6 +32,10 @@ io.sockets.on('connection', (socket) => {
                 score: score.value
             });
         }
+
+        if (place == 5) {
+            io.emit('ScoresUpdated');
+        }
     });
 
     socket.on('EnterScore', (score) => {
