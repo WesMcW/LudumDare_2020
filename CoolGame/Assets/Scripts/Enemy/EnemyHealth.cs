@@ -23,7 +23,16 @@ public class EnemyHealth : MonoBehaviour
 
         if(currHealth <= 0)
         {
-            Destroy(gameObject);
+            if (gameObject.GetComponent<RangedTargeting>())
+            {
+                Destroy(gameObject.GetComponent<RangedTargeting>());
+            }
+            else if (gameObject.GetComponent<MeleeTargeting>())
+            {
+                Destroy(gameObject.GetComponent<MeleeTargeting>());
+            }
+            gameObject.GetComponent<Animator>().SetTrigger("Dead");
+            Destroy(gameObject.GetComponent<EnemyHealth>());
         }
     }
 }
