@@ -1,15 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-//using Newtonsoft.Json;
 using UnityEngine;
 using SocketIO;
 
 public class Networking : MonoBehaviour
 {
+    public static Networking inst;
+
     SocketIOComponent socket;
 
     int highScoreLoadIndex = 0;
     List<HighScore> highScores;
+
+    private void Awake()
+    {
+        if (inst) Destroy(gameObject);
+        else inst = this;
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
@@ -20,14 +29,15 @@ public class Networking : MonoBehaviour
         socket.On("serverMessage", serverMessage);
 
         socket.On("LoadScore", LoadScore);
+
+        socket.Connect();
     }
 
     // This is the listener function definition
     void onConnectionEstabilished(SocketIOEvent evt)
     {
         Debug.Log("Player is connected: " + evt.data.GetField("id"));
-
-        SendScore("Wes", 4.20F);
+        //SendScore("coolname", 3.2345F);
     }
 
     void serverMessage(SocketIOEvent evt)
@@ -46,8 +56,6 @@ public class Networking : MonoBehaviour
         string newName = evt.data.GetField("name").ToString();
         newName.Trim('"');
 
-        Debug.Log(newName);
-
         if (newName != "" && newName != "undefined")
         {
             string tempScore = evt.data.GetField("score").ToString();
@@ -57,8 +65,6 @@ public class Networking : MonoBehaviour
 
             float newScore;
             float.TryParse(tempScore, out newScore);
-
-            Debug.Log("Adding " + newName + ", " + newScore);
 
             HighScore newHS = new HighScore(newName, newScore);
             highScores.Add(newHS);
@@ -74,7 +80,7 @@ public class Networking : MonoBehaviour
 
         socket.Emit("EnterScore", send);
 
-        Invoke("LoadScores", 2F);
+        //Invoke("LoadScores", 2F);
     }
 
     public void LoadScores()
@@ -91,7 +97,7 @@ public class Networking : MonoBehaviour
 
         // do something with the scores here
 
-        Invoke("DebugScores", 2F);
+        //Invoke("DebugScores", 2F);
     }
 
     public void DebugScores()
@@ -106,6 +112,12 @@ public class Networking : MonoBehaviour
             }
         }
         else Debug.LogError("no highscores found");
+    }
+
+    public void ResetHighScores()
+    {
+        socket.Emit("ResetScores");
+        Debug.Log("High scores have been reset.");
     }
 }
 

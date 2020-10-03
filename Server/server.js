@@ -20,7 +20,6 @@ io.sockets.on('connection', (socket) => {
     });
 
     socket.on('LoadTheScore', (place) => {
-        console.log(HighScores.size + ', ' + place);
 
         var score = GetScore(place);
         console.log(score.key + " | " + score.value);
@@ -36,18 +35,22 @@ io.sockets.on('connection', (socket) => {
     });
 
     socket.on('EnterScore', (score) => {
-        //var thing = JSON.parse(score);
-
-        console.log(score);
 
         HighScores.set(
             score.name,
             score.score
         );
 
-        //HighScores = new Map([HighScores.entries()].sort((a, b) => a[1] - b[1]));
-
+        if (HighScores.size > 1) {
+            var temp = new Map([...HighScores.entries()].sort((a, b) => b.value - a.value));
+            HighScores = temp;
+        }
         console.log(score.name + ' | ' + HighScores.get(score.name) + ' saved.');
+    });
+
+    socket.on('ResetScores', () => {
+        HighScores = new Map();
+        console.log('High scores have been reset.');
     });
 
     socket.on('disconnect', () => {
