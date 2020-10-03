@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 using UnityEngine;
 using SocketIO;
 
 public class Networking : MonoBehaviour
 {
     SocketIOComponent socket;
+
+    int highScoreLoadIndex = 0;
+    List<HighScore> highScores;
 
     void Start()
     {
@@ -16,13 +19,15 @@ public class Networking : MonoBehaviour
         socket.On("connectionmessage", onConnectionEstabilished);
         socket.On("serverMessage", serverMessage);
 
-        socket.On("LoadScores", LoadScores);
+        socket.On("LoadScore", LoadScore);
     }
 
     // This is the listener function definition
     void onConnectionEstabilished(SocketIOEvent evt)
     {
         Debug.Log("Player is connected: " + evt.data.GetField("id"));
+
+        SendScore("coolname", 3.2345F);
     }
 
     void serverMessage(SocketIOEvent evt)
@@ -36,34 +41,83 @@ public class Networking : MonoBehaviour
         socket.Emit("buttonClicked", test);
     }
 
-    public void LoadScores(SocketIOEvent evt)
+    public void LoadScore(SocketIOEvent evt)
     {
-        List<Score> highScores = new List<Score>();
-        JSONObject m = evt.data.GetField("names");
-        Debug.Log(m);
+        string newName = evt.data.GetField("name").ToString();
+        newName.Trim('"');
 
-        //string[] names = evt.data.GetField("names");
+        Debug.Log(newName);
 
+        if (newName != "" && newName != "undefined")
+        {
+            string tempScore = evt.data.GetField("score").ToString();
+            tempScore.Trim('"');
+
+            Debug.Log("Adding " + newName + ", " + tempScore);
+
+            float newScore;
+            float.TryParse(tempScore, out newScore);
+
+            Debug.Log("Adding " + newName + ", " + newScore);
+
+            HighScore newHS = new HighScore(newName, newScore);
+            highScores.Add(newHS);
+        }
     }
 
     public void SendScore(string name, float score)
     {
-        Score thing = new Score(name, score);
-        var finalName = JsonConvert.SerializeObject(thing);
-        JSONObject send = new JSONObject(finalName);
+        char quote = '"';
+
+        string thing = "{ " + quote + "name" + quote + ":" + quote + name + quote + ", " + quote + "score" + quote + ":" + score + " }";
+        JSONObject send = new JSONObject(thing);
 
         socket.Emit("EnterScore", send);
+
+        Invoke("LoadScores", 2F);
+    }
+
+    public void LoadScores()
+    {
+        highScoreLoadIndex = 0;
+        highScores = new List<HighScore>();
+
+        for(int i = 0; i < 5; i++)
+        {
+            JSONObject send = new JSONObject(highScoreLoadIndex + 1);
+            socket.Emit("LoadTheScore", send);
+            highScoreLoadIndex++;
+        }
+
+        // do something with the scores here
+
+        Invoke("DebugScores", 2F);
+    }
+
+    public void DebugScores()
+    {
+        Debug.Log("== High Scores ==");
+
+        if (highScores.Count > 0)
+        {
+            for (int i = 0; i < highScores.Count; i++)
+            {
+                Debug.Log(highScores[i].name + " got a score of " + highScores[i].score);
+            }
+        }
+        else Debug.LogError("no highscores found");
     }
 }
 
-public class Score
+
+public class HighScore
 {
     public string name;
     public float score;
 
-    public Score(string n, float s)
+    public HighScore(string n, float f)
     {
         name = n;
-        score = s;
+        score = f;
     }
 }

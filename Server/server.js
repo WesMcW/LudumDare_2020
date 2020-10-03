@@ -19,39 +19,57 @@ io.sockets.on('connection', (socket) => {
         id: socket.id
     });
 
-    socket.on('LoadScores', () => {
-        var i;
-        var names;
-        var scores;
-        var start = HighScores.keys().next();
+    socket.on('LoadTheScore', (place) => {
+        console.log(HighScores.size + ', ' + place);
 
-        for (i = 0; i < 5; i++) {
-            names[i] = start.key;
-            scores[i] = start.value;
+        var score = GetScore(place);
+        console.log(score.key + " | " + score.value);
 
-            start = Highscores[start.key].keys().next();
+        if (score.value > 0) {
+            console.log('sending score...');
+
+            io.emit('LoadScore', {
+                name: score.key,
+                score: score.value
+            });
         }
-
-        io.emit('LoadScores', {
-            names: names,
-            scores: scores
-        });
     });
 
     socket.on('EnterScore', (score) => {
+        //var thing = JSON.parse(score);
+
+        console.log(score);
+
         HighScores.set(
             score.name,
-            score.number
+            score.score
         );
 
-        HighScores = new Map(HighScores.sort());
-        console.log(score.name + ' | ' + score.number + ' saved.');
+        //HighScores = new Map([HighScores.entries()].sort((a, b) => a[1] - b[1]));
+
+        console.log(score.name + ' | ' + HighScores.get(score.name) + ' saved.');
     });
 
     socket.on('disconnect', () => {
         console.log('user disconnected');
-        removeUser(socket);
     });
+
+    function GetScore(placement) {
+        // 1 = 1st, 2 = 2nd...
+        if (HighScores.size >= placement) {
+            var key = Array.from(HighScores.keys())[placement - 1];
+            return {
+                key: key,
+                value: HighScores.get(key)
+            };
+        }
+        else {
+            return {
+                key: 'none',
+                value: -1
+            };
+        }
+    }
 });
 
 server.listen(PORT);
