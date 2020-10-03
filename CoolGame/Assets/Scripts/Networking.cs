@@ -27,7 +27,7 @@ public class Networking : MonoBehaviour
     {
         Debug.Log("Player is connected: " + evt.data.GetField("id"));
 
-        SendScore("coolname", 3.2345F);
+        SendScore("Wes", 4.20F);
     }
 
     void serverMessage(SocketIOEvent evt)
