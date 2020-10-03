@@ -39,11 +39,12 @@ public class Gun : MonoBehaviour
 
         if (!fullAuto)
         {
-            if (Input.GetButtonDown("Fire1") && currTime <= 0 && currAmmo > 1)
+            if (Input.GetButtonDown("Fire1") && currTime <= 0 && currAmmo > 0)
             {
                 //PewPew();
                 gameObject.GetComponent<Animator>().SetTrigger("BOOP");
                 shooting = true;
+                currTime = shootCooldown;
             }
             else if (Input.GetButtonUp("Fire1"))
             {
@@ -52,7 +53,7 @@ public class Gun : MonoBehaviour
         }
         else if (fullAuto)
         {
-            if (Input.GetButton("Fire1") && currTime <= 0 && currAmmo > 1)
+            if (Input.GetButton("Fire1") && currTime <= 0 && currAmmo > 0)
             {
                 //PewPew();
                 gameObject.GetComponent<Animator>().SetTrigger("BOOP");
@@ -94,7 +95,7 @@ public class Gun : MonoBehaviour
             }
         }
 
-        currTime = shootCooldown;
+        //currTime = shootCooldown;
     }
 
     public void MuzzleFlash()
