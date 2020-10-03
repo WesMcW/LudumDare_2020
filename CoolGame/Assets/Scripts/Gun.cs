@@ -21,6 +21,7 @@ public class Gun : MonoBehaviour
     private float currTime;
     private int currAmmo;
     private bool reloading;
+    AudioManager AM;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class Gun : MonoBehaviour
         reloading = false;
         fpsCam = GetComponentInParent<Camera>();
         flash = GetComponentInChildren<ParticleSystem>();
+        AM = AudioManager.inst;
     }
 
     private void Update()
@@ -37,11 +39,12 @@ public class Gun : MonoBehaviour
 
         if (!fullAuto)
         {
-            if (Input.GetButtonDown("Fire1") && currTime <= 0 && currAmmo > 1)
+            if (Input.GetButtonDown("Fire1") && currTime <= 0 && currAmmo > 0)
             {
                 //PewPew();
                 gameObject.GetComponent<Animator>().SetTrigger("BOOP");
                 shooting = true;
+                currTime = shootCooldown;
             }
             else if (Input.GetButtonUp("Fire1"))
             {
@@ -50,7 +53,7 @@ public class Gun : MonoBehaviour
         }
         else if (fullAuto)
         {
-            if (Input.GetButton("Fire1") && currTime <= 0 && currAmmo > 1)
+            if (Input.GetButton("Fire1") && currTime <= 0 && currAmmo > 0)
             {
                 //PewPew();
                 gameObject.GetComponent<Animator>().SetTrigger("BOOP");
@@ -87,6 +90,7 @@ public class Gun : MonoBehaviour
         Vector3 pewSpawn = fpsCam.ViewportToWorldPoint(maybe);
 
         currAmmo--;
+        AM.PlayShot1();
 
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
@@ -97,7 +101,7 @@ public class Gun : MonoBehaviour
             }
         }
 
-        currTime = shootCooldown;
+        //currTime = shootCooldown;
     }
 
     public void MuzzleFlash()
