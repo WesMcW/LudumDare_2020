@@ -13,7 +13,10 @@ public class MeleeTargeting : MonoBehaviour
     public float stoppingDist;
     public float range;
     public float damage;
+    public float atkCooldown;
     public Transform atkPos;
+
+    private float currTime;
 
     void Start()
     {
@@ -24,6 +27,9 @@ public class MeleeTargeting : MonoBehaviour
 
     void Update()
     {
+        currTime -= Time.deltaTime;
+
+
         if(Vector3.Distance(transform.position, player.transform.position) > stoppingDist)
         {
             targetReached = false;
@@ -41,10 +47,12 @@ public class MeleeTargeting : MonoBehaviour
         if (!targetReached)
         {
             agent.SetDestination(player.transform.position);
+            anim.SetBool("Moving", true);
         }
         else
         {
             agent.SetDestination(this.transform.position);
+            anim.SetBool("Moving", false);
             Punch();
         }
     }
@@ -55,10 +63,11 @@ public class MeleeTargeting : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(atkPos.position, transform.forward, out hit, range))
         {
-            if (hit.transform.GetComponent<PlayerHealth>())
+            if (hit.transform.GetComponent<PlayerHealth>() && currTime <= 0)
             {
                 anim.SetTrigger("Punch");
                 hit.transform.GetComponent<PlayerHealth>().TakeDamage(damage);
+                currTime = atkCooldown;
             }
         }
     }
