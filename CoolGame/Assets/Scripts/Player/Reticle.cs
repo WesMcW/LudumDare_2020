@@ -7,6 +7,8 @@ public class Reticle : MonoBehaviour
 {
     private RectTransform reticle;
 
+    public Gun activeGun;
+
     public float restingSize;
     public float maxSize;
     public float growSpeed;
@@ -21,7 +23,7 @@ public class Reticle : MonoBehaviour
 
     private void Update()
     {
-        if (isMoving)
+        if (isMoving || activeGun.shooting)
         {
             currentSize = Mathf.Lerp(currentSize, maxSize, Time.deltaTime * growSpeed);
         }

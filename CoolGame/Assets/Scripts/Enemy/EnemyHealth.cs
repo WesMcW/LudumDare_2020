@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(gameObject.GetComponent<MeleeTargeting>());
             }
             gameObject.GetComponent<Animator>().SetTrigger("Dead");
+            Destroy(gameObject.GetComponent<NavMeshAgent>());
+            Destroy(gameObject.GetComponent<Collider>());
             Destroy(gameObject.GetComponent<EnemyHealth>());
         }
     }
