@@ -25,7 +25,6 @@ public class Networking : MonoBehaviour
     void onConnectionEstabilished(SocketIOEvent evt)
     {
         Debug.Log("Player is connected: " + evt.data.GetField("id"));
-
         //SendScore("coolname", 3.2345F);
     }
 
