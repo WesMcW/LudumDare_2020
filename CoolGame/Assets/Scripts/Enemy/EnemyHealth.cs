@@ -24,6 +24,8 @@ public class EnemyHealth : MonoBehaviour
 
         if(currHealth <= 0)
         {
+            GameManager.inst.activeEnemies.Remove(gameObject);
+
             if (gameObject.GetComponent<RangedTargeting>())
             {
                 Destroy(gameObject.GetComponent<RangedTargeting>());

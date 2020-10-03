@@ -4,22 +4,28 @@ using UnityEngine;
 
 public class DoorFunction : MonoBehaviour
 {
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) OpenDoor();
-        if (Input.GetKeyDown(KeyCode.KeypadEnter)) CloseDoor();
-    }
+    public bool waitingForPlayer = false;
 
     public void OpenDoor()
     {
         GetComponent<Collider>().enabled = false;
         GetComponent<Animator>().SetTrigger("open");
+        waitingForPlayer = true;
     }
 
     public void CloseDoor()
     {
         GetComponent<Collider>().enabled = true;
         GetComponent<Animator>().SetTrigger("close");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (waitingForPlayer && other.CompareTag("Player"))
+        {
+            waitingForPlayer = false;
+            CloseDoor();
+            GameManager.inst.StartRoom();
+        }
     }
 }
