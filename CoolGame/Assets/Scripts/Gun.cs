@@ -21,6 +21,7 @@ public class Gun : MonoBehaviour
     private float currTime;
     private int currAmmo;
     private bool reloading;
+    AudioManager AM;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class Gun : MonoBehaviour
         reloading = false;
         fpsCam = GetComponentInParent<Camera>();
         flash = GetComponentInChildren<ParticleSystem>();
+        AM = AudioManager.inst;
     }
 
     private void Update()
@@ -81,6 +83,7 @@ public class Gun : MonoBehaviour
         Vector3 pewSpawn = fpsCam.ViewportToWorldPoint(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0));
 
         currAmmo--;
+        AM.PlayShot1();
 
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
