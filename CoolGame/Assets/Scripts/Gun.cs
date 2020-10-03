@@ -39,7 +39,13 @@ public class Gun : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1") && currTime <= 0 && currAmmo > 1)
             {
-                PewPew();
+                //PewPew();
+                gameObject.GetComponent<Animator>().SetTrigger("BOOP");
+                shooting = true;
+            }
+            else if (Input.GetButtonUp("Fire1"))
+            {
+                shooting = false;
             }
         }
         else if (fullAuto)
@@ -56,7 +62,7 @@ public class Gun : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && !reloading)
+        if (Input.GetButtonDown("Fire2") && !reloading)
         {
             reloading = true;
             gameObject.GetComponent<Animator>().SetTrigger("reload");
