@@ -101,6 +101,12 @@ public class Networking : MonoBehaviour
         }
         else Debug.LogError("no highscores found");
     }
+
+    public void ResetHighScores()
+    {
+        socket.Emit("ResetScores");
+        Debug.Log("High scores have been reset.");
+    }
 }
 
 

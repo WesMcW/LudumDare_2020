@@ -48,6 +48,11 @@ io.sockets.on('connection', (socket) => {
         console.log(score.name + ' | ' + HighScores.get(score.name) + ' saved.');
     });
 
+    socket.on('ResetScores', () => {
+        HighScores = new Map();
+        console.log('High scores have been reset.');
+    });
+
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });
