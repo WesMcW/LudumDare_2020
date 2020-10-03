@@ -5,10 +5,20 @@ using SocketIO;
 
 public class Networking : MonoBehaviour
 {
+    public static Networking inst;
+
     SocketIOComponent socket;
 
     int highScoreLoadIndex = 0;
     List<HighScore> highScores;
+
+    private void Awake()
+    {
+        if (inst) Destroy(gameObject);
+        else inst = this;
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
@@ -19,6 +29,8 @@ public class Networking : MonoBehaviour
         socket.On("serverMessage", serverMessage);
 
         socket.On("LoadScore", LoadScore);
+
+        socket.Connect();
     }
 
     // This is the listener function definition
