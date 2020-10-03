@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
         {
             paused = !paused;
             pauseMenu.SetActive(paused);
+            if (paused) Time.timeScale = 0;
+            else Time.timeScale = 1;
         }
     }
 }
