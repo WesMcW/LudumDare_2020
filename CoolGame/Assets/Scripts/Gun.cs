@@ -25,7 +25,7 @@ public class Gun : MonoBehaviour
 
     private void Start()
     {
-        SetReticle();
+        //SetReticle();
         currAmmo = maxAmmo;
         reloading = false;
         fpsCam = GetComponentInParent<Camera>();
@@ -80,8 +80,14 @@ public class Gun : MonoBehaviour
 
     public void PewPew()
     {
+        float a = Random.Range(0F, 1F) * 2F * Mathf.PI;
+        float r = ret.currentSize * Mathf.Sqrt(Random.Range(0F, 1F));
+
+        Vector2 maybe = new Vector2(r * Mathf.Cos(a), r * Mathf.Sin(a));
+        Debug.Log("Shot at " + maybe.ToString());
+
         //wtf am I doing?
-        Vector3 pewSpawn = fpsCam.ViewportToWorldPoint(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0));
+        Vector3 pewSpawn = fpsCam.ViewportToWorldPoint(maybe);
 
         currAmmo--;
         AM.PlayShot1();
