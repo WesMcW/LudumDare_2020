@@ -50,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
             GetComponentInChildren<CameraLook>().enabled = false;
             GetComponent<PlayerMovement>().enabled = false;
             anim.SetTrigger("dead");
+            Cursor.lockState = CursorLockMode.None;
             Debug.Log("Game Over");
             dying = 200F;
         }
