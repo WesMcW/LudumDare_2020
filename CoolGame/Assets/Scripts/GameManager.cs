@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager inst;
 
-    public float gameTime = 0f;
+    public float gameTime = -5f;
 
     [Header("Pause Stuff")]
     public bool paused = false;
@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
 
         Invoke("StartRoom", 5F);
     }
-
 
     void Update()
     {
@@ -85,5 +84,19 @@ public class GameManager : MonoBehaviour
 
         activeEnemies = activeRoom.SpawnAll();
         inBattle = true;
+    }
+
+    public string SecondsToTime(float seconds)
+    {
+        int minutes = Mathf.FloorToInt(seconds / 60F);
+        seconds -= (float)(minutes * 60);
+        seconds *= 100F;
+        seconds = (float)Mathf.Round(seconds);
+        seconds /= 100F;
+
+        string time;
+        if (seconds < 10) time = minutes.ToString() + ":0" + seconds.ToString();
+        else time = minutes.ToString() + ":" + seconds.ToString();
+        return time;
     }
 }
