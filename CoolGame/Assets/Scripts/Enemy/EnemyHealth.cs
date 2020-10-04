@@ -25,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
         if(currHealth <= 0)
         {
             GameManager.inst.activeEnemies.Remove(gameObject);
+            gameObject.GetComponent<Animator>().SetTrigger("Dead");
 
             if (gameObject.GetComponent<RangedTargeting>())
             {
@@ -34,7 +35,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 Destroy(gameObject.GetComponent<MeleeTargeting>());
             }
-            gameObject.GetComponent<Animator>().SetTrigger("Dead");
+            //gameObject.GetComponent<Animator>().SetTrigger("Dead");
             Destroy(gameObject.GetComponent<NavMeshAgent>());
             Destroy(gameObject.GetComponent<Collider>());
             Destroy(gameObject.GetComponent<EnemyHealth>());
