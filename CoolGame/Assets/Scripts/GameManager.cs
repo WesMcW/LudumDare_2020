@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public bool inBattle;
     public RoomSpawner activeRoom;
     public List<GameObject> activeEnemies;
+    int lastGun = -1;
 
     [Header("Gun Stuff")]
     bool newWeapon = true;
@@ -71,14 +72,25 @@ public class GameManager : MonoBehaviour
     {
         if (newWeapon)
         {
+            if(lastGun > -1)
+            {
+                foreach(RoomSpawner a in FindObjectsOfType<RoomSpawner>())
+                {
+                    if (!a.isHall) a.myXs[lastGun].SetActive(true);
+                }
+            }
+
             //get a new weapon
             int rand = Random.Range(0, guns.Count);
+            //lastGun = rand;
 
             if (currentGun) currentGun.SetActive(false);
             currentGun = guns[rand];
             currentGun.SetActive(true);
             ret.activeGun = currentGun.GetComponent<Gun>();
             currentGun.GetComponent<Gun>().SetReticle();
+
+            lastGun = currentGun.transform.GetSiblingIndex();
 
             guns.RemoveAt(rand);
             newWeapon = false;
