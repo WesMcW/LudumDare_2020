@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -17874,6 +17874,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 656053426, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: ret
+      value: 
+      objectReference: {fileID: 1558379457}
+    - target: {fileID: 656053426, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: maxAmmo
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 656053426, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: shootCooldown
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1733887710, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
       propertyPath: ret
       value: 
@@ -17952,6 +17964,11 @@ PrefabInstance:
       propertyPath: ret
       value: 
       objectReference: {fileID: 1558379457}
+    - target: {fileID: 2123990522052746292, guid: f28b17913c0ef6f4fa769239e06d13e1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4730220893539985666, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
       propertyPath: m_IsActive
@@ -18104,6 +18121,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+--- !u!1 &942567673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2123990522052746292, guid: f28b17913c0ef6f4fa769239e06d13e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 942567672}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &946843386
 GameObject:
   m_ObjectHideFlags: 0
@@ -45897,6 +45920,7 @@ MonoBehaviour:
   - {fileID: 2048103979}
   - {fileID: 791391086}
   - {fileID: 1075326946}
+  - {fileID: 942567673}
   ret: {fileID: 1558379457}
 --- !u!4 &2046528093
 Transform:
