@@ -27,6 +27,9 @@ public class EnemyHealth : MonoBehaviour
             GameManager.inst.activeEnemies.Remove(gameObject);
             gameObject.GetComponent<Animator>().SetTrigger("Dead");
 
+            int rand = Random.Range(0, 4);
+            AudioManager.inst.DeathSound(rand);
+
             if (gameObject.GetComponent<RangedTargeting>())
             {
                 Destroy(gameObject.GetComponent<RangedTargeting>());

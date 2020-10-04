@@ -43,5 +43,12 @@ public class ShotGun : Gun
 
             //currTime = shootCooldown;
         }
+
+        setText();
+    }
+
+    protected override void setText()
+    {
+        text.text = currAmmo / shotCount + " / " + maxAmmo / shotCount;
     }
 }

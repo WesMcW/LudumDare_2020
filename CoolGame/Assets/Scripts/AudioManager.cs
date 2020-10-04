@@ -21,6 +21,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource shot1;
     public AudioSource doorOpen;
     public AudioSource doorClose;
+    public AudioSource deth1;
+    public AudioSource deth2;
+    public AudioSource deth3;
 
     public void PlayShot1(float pitch)
     {
@@ -36,5 +39,27 @@ public class AudioManager : MonoBehaviour
     public void Close()
     {
         doorClose.Play();
+    }
+
+    public void DeathSound(int num)
+    {
+        if(num == 1)
+        {
+            float rand = Random.Range(.7f, .9f);
+            deth1.pitch = rand;
+            deth1.Play();
+        }
+        else if(num == 2)
+        {
+            float rand = Random.Range(.7f, .9f);
+            deth2.pitch = rand;
+            deth2.Play();
+        }
+        else
+        {
+            float rand = Random.Range(.7f, .9f);
+            deth3.pitch = rand;
+            deth3.Play();
+        }
     }
 }

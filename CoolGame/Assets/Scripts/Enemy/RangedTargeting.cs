@@ -88,12 +88,12 @@ public class RangedTargeting : MonoBehaviour
 
         Vector3 pewSpawn = new Vector3(shootPos.transform.forward.x + x, shootPos.transform.forward.y + y, shootPos.transform.forward.z);
 
-        Debug.DrawRay(shootPos.transform.position, pewSpawn * range, Color.red, 3F);
+        //Debug.DrawRay(shootPos.transform.position, pewSpawn * range, Color.red, 3F);
 
         RaycastHit hit;
         if (Physics.Raycast(shootPos.position, pewSpawn, out hit, range))
         {
-            if (hit.transform.GetComponent<PlayerHealth>() && currTime <= 0)
+            if (hit.transform.GetComponent<PlayerHealth>())
             {
                 hit.transform.GetComponent<PlayerHealth>().TakeDamage(damage);
                 currTime = shootCooldown;

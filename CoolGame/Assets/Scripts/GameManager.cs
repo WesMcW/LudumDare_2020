@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Gun Stuff")]
     bool newWeapon = true;
-    GameObject currentGun;
+    public GameObject currentGun;
     public List<GameObject> guns;
     public Reticle ret;
 
