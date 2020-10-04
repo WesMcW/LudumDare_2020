@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Gun : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Gun : MonoBehaviour
     public bool shooting;
 
     public Reticle ret;
+    public TextMeshProUGUI text;
 
     protected Camera fpsCam;
     protected ParticleSystem flash;
@@ -28,6 +30,8 @@ public class Gun : MonoBehaviour
     {
         //SetReticle();
         currAmmo = maxAmmo;
+        text.text = currAmmo + " / " + maxAmmo;
+
         reloading = false;
         fpsCam = GetComponentInParent<Camera>();
         flash = GetComponentInChildren<ParticleSystem>();
@@ -98,6 +102,7 @@ public class Gun : MonoBehaviour
 
         currAmmo--;
         AM.PlayShot1(audioPitch);
+        text.text = currAmmo + " / " + maxAmmo;
 
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, pewSpawn, out hit, range))
@@ -125,5 +130,6 @@ public class Gun : MonoBehaviour
     {
         reloading = false;
         currAmmo = maxAmmo;
+        text.text = currAmmo + " / " + maxAmmo;
     }
 }

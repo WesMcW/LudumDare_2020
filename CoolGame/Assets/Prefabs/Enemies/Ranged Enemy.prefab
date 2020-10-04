@@ -1459,7 +1459,7 @@ MonoBehaviour:
   stoppingDist: 10
   lookSpeed: 5
   shootPos: {fileID: 4692308748040002312}
-  accuacyOffset: 0.09
+  accuacyOffset: 0.03
 --- !u!1 &5628212481472820889
 GameObject:
   m_ObjectHideFlags: 0
