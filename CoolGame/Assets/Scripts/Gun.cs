@@ -107,7 +107,13 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, pewSpawn, out hit, range))
         {
-            if (hit.transform.GetComponent<EnemyHealth>())
+            if (hit.transform.CompareTag("head"))
+            {
+                Debug.Log("HEAD SHOT");
+                hit.transform.GetComponent<HealthRef>().myHealth.TakeDamage(damage * 2F);
+                ParticlePool.inst.UseFromPool(hit.point);
+            }
+            else if (hit.transform.GetComponent<EnemyHealth>())
             {
                 hit.transform.GetComponent<EnemyHealth>().TakeDamage(damage);
                 ParticlePool.inst.UseFromPool(hit.point);

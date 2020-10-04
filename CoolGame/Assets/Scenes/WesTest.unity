@@ -121,9 +121,9 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 5f3e263c0bde2b642ae46199f5baab1f, type: 2}
---- !u!114 &50320907 stripped
+--- !u!114 &123228862 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1276919966738132747, guid: f28b17913c0ef6f4fa769239e06d13e1,
+  m_CorrespondingSourceObject: {fileID: 656053426, guid: f28b17913c0ef6f4fa769239e06d13e1,
     type: 3}
   m_PrefabInstance: {fileID: 1276919966174308852}
   m_PrefabAsset: {fileID: 0}
@@ -1391,23 +1391,48 @@ PrefabInstance:
       propertyPath: ret
       value: 
       objectReference: {fileID: 737419286}
+    - target: {fileID: 629205870, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 294501877}
     - target: {fileID: 656053426, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
       propertyPath: ret
       value: 
       objectReference: {fileID: 737419286}
+    - target: {fileID: 656053426, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 294501877}
     - target: {fileID: 1733887710, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
       propertyPath: ret
       value: 
       objectReference: {fileID: 737419286}
+    - target: {fileID: 1733887710, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 294501877}
+    - target: {fileID: 1824162644, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 294501877}
     - target: {fileID: 2129239044, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
       propertyPath: ret
       value: 
       objectReference: {fileID: 737419286}
+    - target: {fileID: 2129239044, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 294501877}
     - target: {fileID: 1276919966738132747, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
       propertyPath: ret
       value: 
       objectReference: {fileID: 737419286}
+    - target: {fileID: 1276919966738132747, guid: f28b17913c0ef6f4fa769239e06d13e1,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 294501877}
     - target: {fileID: 1599409591818770312, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
       propertyPath: m_RootOrder
@@ -1427,6 +1452,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123990522052746292, guid: f28b17913c0ef6f4fa769239e06d13e1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5958221636779628106, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
@@ -1498,11 +1528,21 @@ PrefabInstance:
       propertyPath: ret
       value: 
       objectReference: {fileID: 737419286}
+    - target: {fileID: 5958221637359951414, guid: f28b17913c0ef6f4fa769239e06d13e1,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 294501877}
     - target: {fileID: 5958221637928613207, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
       propertyPath: ret
       value: 
       objectReference: {fileID: 737419286}
+    - target: {fileID: 5958221637928613207, guid: f28b17913c0ef6f4fa769239e06d13e1,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 294501877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
 --- !u!1001 &4692308748327514142
@@ -1586,11 +1626,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 7118941481058638216, guid: e73f44de95782814c81974cc64705401,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7602180777915925298, guid: e73f44de95782814c81974cc64705401,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1659,7 +1694,7 @@ PrefabInstance:
         type: 3}
       propertyPath: activeGun
       value: 
-      objectReference: {fileID: 50320907}
+      objectReference: {fileID: 123228862}
     - target: {fileID: 7932027857002523458, guid: 2c4ab194ff413d242a6c992344786ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
