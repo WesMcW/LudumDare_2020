@@ -100,12 +100,14 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, pewSpawn, out hit, range))
         {
-            ParticlePool.inst.UseFromPool(hit.point);
-
             if (hit.transform.GetComponent<EnemyHealth>())
             {
                 hit.transform.GetComponent<EnemyHealth>().TakeDamage(damage);
                 ParticlePool.inst.UseFromPool(hit.point);
+            }
+            else
+            {
+                ParticlePool.inst.UseFromOtherPool(hit.point);
             }
         }
 

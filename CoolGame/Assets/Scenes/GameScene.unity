@@ -5152,7 +5152,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh213030
+  m_Name: pb_Mesh138106
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5309,6 +5309,54 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &372200816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 372200818}
+  - component: {fileID: 372200817}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &372200817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372200816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 8102b31750c61494e9ad1f0889c184af, type: 2}
+--- !u!4 &372200818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372200816}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -90.9161, y: -5.9642916, z: -9.582846}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &381340925
 GameObject:
   m_ObjectHideFlags: 0
@@ -17406,7 +17454,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh212762
+  m_Name: pb_Mesh137800
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17569,7 +17617,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh212796
+  m_Name: pb_Mesh137834
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22513,7 +22561,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16384
+  m_Name: pb_Mesh137962
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33570,7 +33618,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh212682
+  m_Name: pb_Mesh137698
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33826,7 +33874,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh212858
+  m_Name: pb_Mesh137920
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -40703,7 +40751,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16320
+  m_Name: pb_Mesh137898
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -45278,7 +45326,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh213088
+  m_Name: pb_Mesh138186
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -45883,9 +45931,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93175203f23c1b4aac2f9c38fa524e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle: {fileID: 7449524679676722283, guid: d7de710ebf3f27645b20a11182772609,
+  particle: {fileID: 4859499127668458550, guid: 4c8938cbade688d47a55fbedc7602f61,
     type: 3}
-  pool: []
+  otherParticle: {fileID: 3820705869415616128, guid: d32eab8e7d325194e894fee267112482,
+    type: 3}
 --- !u!1 &2048103979 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2123990521213870910, guid: f28b17913c0ef6f4fa769239e06d13e1,

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Particle : MonoBehaviour
 {
+    public bool isOther;
+
     private void Awake()
     {
         Invoke("ReturnToPool", 1F);
@@ -11,6 +13,7 @@ public class Particle : MonoBehaviour
 
     void ReturnToPool()
     {
-        ParticlePool.inst.ReturnToPool(gameObject);
+        if(isOther) ParticlePool.inst.ReturnToOtherPool(gameObject);
+        else ParticlePool.inst.ReturnToPool(gameObject);
     }
 }
