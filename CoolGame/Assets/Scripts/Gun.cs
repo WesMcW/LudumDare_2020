@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour
     public float range;
     public float shootCooldown;
     public int maxAmmo;
+    public float audioPitch = 1;
 
     public bool fullAuto;
     public bool shooting;
@@ -58,6 +59,7 @@ public class Gun : MonoBehaviour
                 //PewPew();
                 gameObject.GetComponent<Animator>().SetTrigger("BOOP");
                 shooting = true;
+                currTime = shootCooldown;
             }
             else if (Input.GetButtonUp("Fire1"))
             {
@@ -67,8 +69,8 @@ public class Gun : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2") && !reloading)
         {
-            reloading = true;
             gameObject.GetComponent<Animator>().SetTrigger("reload");
+            reloading = true;
         }
     }
 
@@ -95,7 +97,7 @@ public class Gun : MonoBehaviour
         Debug.DrawRay(fpsCam.transform.position, pewSpawn * range, Color.green, 3F);
 
         currAmmo--;
-        AM.PlayShot1();
+        AM.PlayShot1(audioPitch);
 
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, pewSpawn, out hit, range))
@@ -121,7 +123,7 @@ public class Gun : MonoBehaviour
 
     public void ReloadAmmo()
     {
-        currAmmo = maxAmmo;
         reloading = false;
+        currAmmo = maxAmmo;
     }
 }
