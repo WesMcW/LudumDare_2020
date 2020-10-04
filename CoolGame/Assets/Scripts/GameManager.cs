@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(!paused) gameTime += Time.deltaTime;
-        if (!activeRoom.isHall) activeRoom.myTimer.GetComponent<TextMeshProUGUI>().text = SecondsToTime(gameTime);
-        else activeRoom.nextRoom.myTimer.GetComponent<TextMeshProUGUI>().text = SecondsToTime(gameTime);
+        activeRoom.myTimer.GetComponent<TextMeshProUGUI>().text = SecondsToTime(gameTime);
+        if (activeRoom.isHall) activeRoom.nextRoom.myTimer.GetComponent<TextMeshProUGUI>().text = SecondsToTime(gameTime);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
             //get a new weapon
             int rand = Random.Range(0, guns.Count);
 
-            //if (currentGun) currentGun.SetActive(false);
+            if (currentGun) currentGun.SetActive(false);
             currentGun = guns[rand];
             currentGun.SetActive(true);
             ret.activeGun = currentGun.GetComponent<Gun>();
