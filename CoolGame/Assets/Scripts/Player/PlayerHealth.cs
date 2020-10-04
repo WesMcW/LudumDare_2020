@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public float currHealth;
 
     public Image deathImg;
+    public Image gameOver;
     float dying = 0F;
     Animator anim;
 
@@ -42,10 +44,18 @@ public class PlayerHealth : MonoBehaviour
 
         if (currHealth <= 0)
         {
+            GameManager.inst.currentGun.GetComponent<Gun>().text.gameObject.SetActive(false);
+            GameManager.inst.currentGun.SetActive(false);
+            GameManager.inst.ret.gameObject.SetActive(false);
+            GetComponent<PlayerMovement>().enabled = false;
+            anim.SetTrigger("dead");
             Debug.Log("Game Over");
             dying = 200F;
-
-            // death stuff
         }
+    }
+
+    public void TurnOnGameOver()
+    {
+        gameOver.gameObject.SetActive(true);
     }
 }
