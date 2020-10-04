@@ -25,7 +25,7 @@ public class ShotGun : Gun
             //Debug.DrawRay(fpsCam.transform.position, pewSpawn * range, Color.green, 3F);
 
             currAmmo--;
-            AM.PlayShot1();
+            AM.PlayShot1(audioPitch);
 
             RaycastHit hit;
             if (Physics.Raycast(fpsCam.transform.position, pewSpawn, out hit, range))
