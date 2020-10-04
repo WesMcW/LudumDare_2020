@@ -10,10 +10,12 @@ public class PlayerHealth : MonoBehaviour
 
     public Image deathImg;
     float dying = 0F;
+    Animator anim;
 
     void Start()
     {
         currHealth = maxHealth;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
