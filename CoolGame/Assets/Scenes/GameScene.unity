@@ -4747,6 +4747,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &146625037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5742772875406490741, guid: a3e8cc7fab3c31a4f8f2e3dfcbf63170,
+    type: 3}
+  m_PrefabInstance: {fileID: 353256407}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &149128292
 GameObject:
   m_ObjectHideFlags: 0
@@ -34615,7 +34621,7 @@ MonoBehaviour:
   - {fileID: 150450799}
   - {fileID: 600814559}
   - {fileID: 525240634}
-  - {fileID: 0}
+  - {fileID: 1310715425}
   - {fileID: 1173142636}
 --- !u!1 &1274058521
 GameObject:
@@ -34733,6 +34739,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2418361011978513468, guid: 049d94336b09c6d4db2e73e41f859ecd,
     type: 3}
   m_PrefabInstance: {fileID: 1281355622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1310715425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7939378475686302613, guid: a3e8cc7fab3c31a4f8f2e3dfcbf63170,
+    type: 3}
+  m_PrefabInstance: {fileID: 1390733053}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1320650896 stripped
 RectTransform:
@@ -43231,7 +43243,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh62858
+  m_Name: pb_Mesh16440
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -53401,7 +53413,7 @@ MonoBehaviour:
   myXs:
   - {fileID: 448797596}
   - {fileID: 1458842969}
-  - {fileID: 0}
+  - {fileID: 146625037}
   - {fileID: 1437830039}
   - {fileID: 1384160701}
   - {fileID: 984405334}
