@@ -13,6 +13,7 @@ public class RoomSpawner : MonoBehaviour
     public DoorFunction myDoor;
 
     public GameObject myTimer;
+    public GameObject[] myXs;
 
     public void CleanUpRoom()
     {

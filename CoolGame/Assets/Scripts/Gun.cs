@@ -94,7 +94,7 @@ public class Gun : MonoBehaviour
 
         Vector3 pewSpawn = new Vector3(fpsCam.transform.forward.x + x, fpsCam.transform.forward.y + y, fpsCam.transform.forward.z);
 
-        Debug.DrawRay(fpsCam.transform.position, pewSpawn * range, Color.green, 3F);
+        //Debug.DrawRay(fpsCam.transform.position, pewSpawn * range, Color.green, 3F);
 
         currAmmo--;
         AM.PlayShot1(audioPitch);
