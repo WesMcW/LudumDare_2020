@@ -8,6 +8,7 @@ public class DoorFunction : MonoBehaviour
 
     public void OpenDoor()
     {
+        AudioManager.inst.Open();
         GetComponent<Collider>().enabled = false;
         GetComponent<Animator>().SetTrigger("open");
         waitingForPlayer = true;
@@ -15,6 +16,7 @@ public class DoorFunction : MonoBehaviour
 
     public void CloseDoor()
     {
+        AudioManager.inst.Close();
         GetComponent<Collider>().enabled = true;
         GetComponent<Animator>().SetTrigger("close");
     }
