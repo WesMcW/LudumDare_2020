@@ -88,16 +88,24 @@ public class Gun : MonoBehaviour
 
         //wtf am I doing?
         Vector3 pewSpawn = fpsCam.ViewportToWorldPoint(maybe);
+        pewSpawn.Normalize();
+        pewSpawn = new Vector3(fpsCam.transform.forward.x + pewSpawn.x, fpsCam.transform.forward.y + pewSpawn.y, fpsCam.transform.forward.z + pewSpawn.z);
+        pewSpawn.Normalize();
+
+        Debug.DrawRay(fpsCam.transform.position, pewSpawn * range, Color.green, 3F);
 
         currAmmo--;
         AM.PlayShot1();
 
         RaycastHit hit;
-        if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        if(Physics.Raycast(fpsCam.transform.position, pewSpawn, out hit, range))
         {
+            ParticlePool.inst.UseFromPool(hit.point);
+
             if (hit.transform.GetComponent<EnemyHealth>())
             {
                 hit.transform.GetComponent<EnemyHealth>().TakeDamage(damage);
+                ParticlePool.inst.UseFromPool(hit.point);
             }
         }
 
