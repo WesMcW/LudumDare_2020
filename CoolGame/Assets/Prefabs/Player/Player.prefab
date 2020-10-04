@@ -24849,7 +24849,7 @@ MonoBehaviour:
   range: 50
   shootCooldown: 0.1
   maxAmmo: 20
-  audioPitch: 1
+  audioPitch: 1.5
   fullAuto: 1
   shooting: 0
   ret: {fileID: 0}
@@ -24890,7 +24890,7 @@ MonoBehaviour:
   range: 50
   shootCooldown: 0.2
   maxAmmo: 10
-  audioPitch: 1
+  audioPitch: 1.3
   fullAuto: 1
   shooting: 0
   ret: {fileID: 0}
