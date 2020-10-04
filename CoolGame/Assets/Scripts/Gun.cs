@@ -80,17 +80,17 @@ public class Gun : MonoBehaviour
 
     public void PewPew()
     {
-        float a = Random.Range(0F, 1F) * 2F * Mathf.PI;
-        float r = ret.currentSize * Mathf.Sqrt(Random.Range(0F, 1F));
+        // between 5 and 15
+        //average spread: .05F
+        //largest spread can be: .15F
 
-        Vector2 maybe = new Vector2(r * Mathf.Cos(a), r * Mathf.Sin(a));
-        Debug.Log("Shot at " + maybe.ToString());
+        float fromRet = ret.currentSize / 100F;
 
-        //wtf am I doing?
-        Vector3 pewSpawn = fpsCam.ViewportToWorldPoint(maybe);
-        pewSpawn.Normalize();
-        pewSpawn = new Vector3(fpsCam.transform.forward.x + pewSpawn.x, fpsCam.transform.forward.y + pewSpawn.y, fpsCam.transform.forward.z + pewSpawn.z);
-        pewSpawn.Normalize();
+        float x = Random.Range(-fromRet, fromRet);
+        float y = Random.Range(-fromRet, fromRet);
+        //Debug.Log("(" + x + ", " + y + ")");
+
+        Vector3 pewSpawn = new Vector3(fpsCam.transform.forward.x + x, fpsCam.transform.forward.y + y, fpsCam.transform.forward.z);
 
         Debug.DrawRay(fpsCam.transform.position, pewSpawn * range, Color.green, 3F);
 

@@ -19,6 +19,7 @@ public class Reticle : MonoBehaviour
     private void Start()
     {
         reticle = GetComponent<RectTransform>();
+        activeGun.SetReticle();
     }
 
     private void Update()
@@ -32,7 +33,7 @@ public class Reticle : MonoBehaviour
             currentSize = Mathf.Lerp(currentSize, restingSize, Time.deltaTime * shrinkSpeed);
         }
 
-        reticle.sizeDelta = new Vector2(currentSize, currentSize) * 50F;
+        reticle.sizeDelta = new Vector2(currentSize, currentSize) * 18F;
     }
 
     bool isMoving

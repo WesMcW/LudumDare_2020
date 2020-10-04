@@ -1,45 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!95 &5958221637359951415
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6804572707383927650}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2bda5c06c06ec0849aae79f026f7b327, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5958221637359951414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6804572707383927650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd49ee96adee7aa43aae5f30aa7d6050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  defaultAcc: 0
-  maxAcc: 0
-  range: 50
-  shootCooldown: 0.3
-  maxAmmo: 10
-  fullAuto: 1
-  shooting: 0
-  ret: {fileID: 0}
 --- !u!1 &1276919965736744083
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,86 +184,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!95 &5958221637928613208
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6804572706877550460}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4fa2e0326916e1448be463520af2170c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5958221637928613207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6804572706877550460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd49ee96adee7aa43aae5f30aa7d6050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0.5
-  defaultAcc: 0
-  maxAcc: 0
-  range: 50
-  shootCooldown: 0.1
-  maxAmmo: 20
-  fullAuto: 1
-  shooting: 0
-  ret: {fileID: 0}
---- !u!95 &1276919966217710016
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123990521213870910}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 897d1c89b0771e64d9f055808487d43c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1276919966217710023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123990521213870910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd49ee96adee7aa43aae5f30aa7d6050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 5
-  defaultAcc: 0
-  maxAcc: 0
-  range: 10
-  shootCooldown: 1
-  maxAmmo: 6
-  fullAuto: 0
-  shooting: 0
-  ret: {fileID: 0}
 --- !u!1 &1276919966497280336
 GameObject:
   m_ObjectHideFlags: 0
@@ -10021,86 +9901,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!95 &1276919966738132724
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123990522027330709}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 13933e15efcd23b41b01f2bc03e5a957, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1276919966738132747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123990522027330709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd49ee96adee7aa43aae5f30aa7d6050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  defaultAcc: 0
-  maxAcc: 0
-  range: 50
-  shootCooldown: 0.5
-  maxAmmo: 12
-  fullAuto: 0
-  shooting: 0
-  ret: {fileID: 0}
---- !u!95 &1276919966799988466
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123990520897190552}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4b85c145b621cc146bb8859a8c8480e6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1276919966799988465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123990520897190552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd49ee96adee7aa43aae5f30aa7d6050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  defaultAcc: 2
-  maxAcc: 5
-  range: 50
-  shootCooldown: 1.4
-  maxAmmo: 3
-  fullAuto: 0
-  shooting: 0
-  ret: {fileID: 0}
 --- !u!1 &1276919967086671448
 GameObject:
   m_ObjectHideFlags: 0
@@ -14913,6 +14713,126 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!95 &1276919966799988466
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123990520897190552}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b85c145b621cc146bb8859a8c8480e6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1276919966799988465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123990520897190552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd49ee96adee7aa43aae5f30aa7d6050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  defaultAcc: 10
+  maxAcc: 13
+  range: 50
+  shootCooldown: 1.4
+  maxAmmo: 3
+  fullAuto: 0
+  shooting: 0
+  ret: {fileID: 0}
+--- !u!95 &1276919966217710016
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123990521213870910}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 897d1c89b0771e64d9f055808487d43c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1276919966217710023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123990521213870910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd49ee96adee7aa43aae5f30aa7d6050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  defaultAcc: 12
+  maxAcc: 15
+  range: 50
+  shootCooldown: 1
+  maxAmmo: 6
+  fullAuto: 0
+  shooting: 0
+  ret: {fileID: 0}
+--- !u!95 &1276919966738132724
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123990522027330709}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13933e15efcd23b41b01f2bc03e5a957, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1276919966738132747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123990522027330709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd49ee96adee7aa43aae5f30aa7d6050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  defaultAcc: 5
+  maxAcc: 9
+  range: 50
+  shootCooldown: 0.5
+  maxAmmo: 12
+  fullAuto: 0
+  shooting: 0
+  ret: {fileID: 0}
 --- !u!1 &5958221635842089648
 GameObject:
   m_ObjectHideFlags: 0
@@ -24887,6 +24807,86 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!95 &5958221637928613208
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804572706877550460}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4fa2e0326916e1448be463520af2170c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5958221637928613207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804572706877550460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd49ee96adee7aa43aae5f30aa7d6050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0.5
+  defaultAcc: 6
+  maxAcc: 11
+  range: 50
+  shootCooldown: 0.1
+  maxAmmo: 20
+  fullAuto: 1
+  shooting: 0
+  ret: {fileID: 0}
+--- !u!95 &5958221637359951415
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804572707383927650}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bda5c06c06ec0849aae79f026f7b327, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5958221637359951414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804572707383927650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd49ee96adee7aa43aae5f30aa7d6050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  defaultAcc: 8
+  maxAcc: 10
+  range: 50
+  shootCooldown: 0.3
+  maxAmmo: 10
+  fullAuto: 1
+  shooting: 0
+  ret: {fileID: 0}
 --- !u!1001 &1276919966732480964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24976,15 +24976,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5b1ba5c35084cc4fb3ef2ec1b702130, type: 3}
---- !u!1 &2123990522027330709 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c5b1ba5c35084cc4fb3ef2ec1b702130,
-    type: 3}
-  m_PrefabInstance: {fileID: 1276919966732480964}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1599409591925085743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c5b1ba5c35084cc4fb3ef2ec1b702130,
+    type: 3}
+  m_PrefabInstance: {fileID: 1276919966732480964}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2123990522027330709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c5b1ba5c35084cc4fb3ef2ec1b702130,
     type: 3}
   m_PrefabInstance: {fileID: 1276919966732480964}
   m_PrefabAsset: {fileID: 0}
@@ -25178,15 +25178,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d0e0786d412fe347b3ad6c9c2167b0a, type: 3}
---- !u!4 &1599409590883049506 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d0e0786d412fe347b3ad6c9c2167b0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1276919967749670857}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2123990520897190552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1d0e0786d412fe347b3ad6c9c2167b0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1276919967749670857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1599409590883049506 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d0e0786d412fe347b3ad6c9c2167b0a,
     type: 3}
   m_PrefabInstance: {fileID: 1276919967749670857}
   m_PrefabAsset: {fileID: 0}
