@@ -43,5 +43,7 @@ public class ShotGun : Gun
 
             //currTime = shootCooldown;
         }
+
+        text.text = currAmmo + " / " + maxAmmo;
     }
 }
