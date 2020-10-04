@@ -5229,7 +5229,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3fdf9437e1160c540ada002b694752a7, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -19089,6 +19089,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 797311344}
+    - target: {fileID: 629205870, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: shootCooldown
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 656053426, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
       propertyPath: ret
       value: 
@@ -19113,6 +19117,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 797311344}
+    - target: {fileID: 1733887710, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: maxAmmo
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 1824162644, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
       propertyPath: ret
       value: 
@@ -19129,6 +19137,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 797311344}
+    - target: {fileID: 2129239044, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: maxAmmo
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 194290457979957496, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
       propertyPath: m_IsActive
@@ -19449,6 +19461,11 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 797311344}
+    - target: {fileID: 5958221637359951414, guid: f28b17913c0ef6f4fa769239e06d13e1,
+        type: 3}
+      propertyPath: shootCooldown
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 5958221637928613207, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
       propertyPath: ret
@@ -35661,7 +35678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

@@ -47,6 +47,7 @@ public class PlayerHealth : MonoBehaviour
             GameManager.inst.currentGun.GetComponent<Gun>().text.gameObject.SetActive(false);
             GameManager.inst.currentGun.SetActive(false);
             GameManager.inst.ret.gameObject.SetActive(false);
+            GetComponentInChildren<CameraLook>().enabled = false;
             GetComponent<PlayerMovement>().enabled = false;
             anim.SetTrigger("dead");
             Debug.Log("Game Over");
