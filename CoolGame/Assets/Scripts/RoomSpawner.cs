@@ -8,19 +8,13 @@ public class RoomSpawner : MonoBehaviour
     public RoomSpawner nextRoom;
 
     public List<Spawner> myRoomSpawns;
+    List<GameObject> spawnedGoons;
 
     public DoorFunction myDoor;
 
-    // Start is called before the first frame update
-    void Start()
+    public void CleanUpRoom()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (GameObject a in spawnedGoons) Destroy(a);
     }
 
     public List<GameObject> SpawnAll()
@@ -44,6 +38,7 @@ public class RoomSpawner : MonoBehaviour
         }
 
         foreach (Spawner a in myRoomSpawns) a.hasSpawned = false;
+        spawnedGoons = active;
         return active;
     }
 

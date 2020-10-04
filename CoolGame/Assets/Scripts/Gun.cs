@@ -16,14 +16,14 @@ public class Gun : MonoBehaviour
 
     public Reticle ret;
 
-    private Camera fpsCam;
-    private ParticleSystem flash;
-    private float currTime;
-    private int currAmmo;
-    private bool reloading;
-    AudioManager AM;
+    protected Camera fpsCam;
+    protected ParticleSystem flash;
+    protected float currTime;
+    protected int currAmmo;
+    protected bool reloading;
+    protected AudioManager AM;
 
-    private void Start()
+    protected void Start()
     {
         //SetReticle();
         currAmmo = maxAmmo;
@@ -33,7 +33,7 @@ public class Gun : MonoBehaviour
         AM = AudioManager.inst;
     }
 
-    private void Update()
+    protected void Update()
     {
         currTime -= Time.deltaTime;
 
@@ -78,7 +78,7 @@ public class Gun : MonoBehaviour
         ret.restingSize = defaultAcc;
     }
 
-    public void PewPew()
+    public virtual void PewPew()
     {
         // between 5 and 15
         //average spread: .05F
