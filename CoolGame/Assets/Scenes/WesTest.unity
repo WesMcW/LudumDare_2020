@@ -1156,51 +1156,16 @@ PrefabInstance:
       propertyPath: ret
       value: 
       objectReference: {fileID: 737419286}
-    - target: {fileID: 1276919966217710023, guid: f28b17913c0ef6f4fa769239e06d13e1,
-        type: 3}
-      propertyPath: audioPitch
-      value: 0.55
-      objectReference: {fileID: 0}
     - target: {fileID: 1276919966738132747, guid: f28b17913c0ef6f4fa769239e06d13e1,
-        type: 3}
-      propertyPath: ret
-      value: 
-      objectReference: {fileID: 737419286}
-    - target: {fileID: 1276919966738132747, guid: f28b17913c0ef6f4fa769239e06d13e1,
-        type: 3}
-      propertyPath: fullAuto
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1276919966738132747, guid: f28b17913c0ef6f4fa769239e06d13e1,
-        type: 3}
-      propertyPath: audioPitch
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1276919966799988465, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
       propertyPath: ret
       value: 
       objectReference: {fileID: 737419286}
     - target: {fileID: 1276919966799988465, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
-      propertyPath: audioPitch
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2123990520897190552, guid: f28b17913c0ef6f4fa769239e06d13e1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2123990521213870910, guid: f28b17913c0ef6f4fa769239e06d13e1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2123990522027330709, guid: f28b17913c0ef6f4fa769239e06d13e1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: ret
+      value: 
+      objectReference: {fileID: 737419286}
     - target: {fileID: 5958221636779628106, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
       propertyPath: m_Name
@@ -1266,21 +1231,11 @@ PrefabInstance:
       propertyPath: ret
       value: 
       objectReference: {fileID: 737419286}
-    - target: {fileID: 5958221637359951414, guid: f28b17913c0ef6f4fa769239e06d13e1,
-        type: 3}
-      propertyPath: shootCooldown
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 5958221637928613207, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
       propertyPath: ret
       value: 
       objectReference: {fileID: 737419286}
-    - target: {fileID: 6804572707383927650, guid: f28b17913c0ef6f4fa769239e06d13e1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
 --- !u!1001 &4692308748327514142

@@ -14750,6 +14750,7 @@ MonoBehaviour:
   range: 50
   shootCooldown: 1.4
   maxAmmo: 3
+  audioPitch: 0.4
   fullAuto: 0
   shooting: 0
   ret: {fileID: 0}
@@ -14790,6 +14791,7 @@ MonoBehaviour:
   range: 50
   shootCooldown: 1
   maxAmmo: 6
+  audioPitch: 0.55
   fullAuto: 0
   shooting: 0
   ret: {fileID: 0}
@@ -14830,6 +14832,7 @@ MonoBehaviour:
   range: 50
   shootCooldown: 0.5
   maxAmmo: 12
+  audioPitch: 0.8
   fullAuto: 0
   shooting: 0
   ret: {fileID: 0}
@@ -24844,6 +24847,7 @@ MonoBehaviour:
   range: 50
   shootCooldown: 0.1
   maxAmmo: 20
+  audioPitch: 1
   fullAuto: 1
   shooting: 0
   ret: {fileID: 0}
@@ -24882,8 +24886,9 @@ MonoBehaviour:
   defaultAcc: 8
   maxAcc: 10
   range: 50
-  shootCooldown: 0.3
+  shootCooldown: 0.2
   maxAmmo: 10
+  audioPitch: 1
   fullAuto: 1
   shooting: 0
   ret: {fileID: 0}
