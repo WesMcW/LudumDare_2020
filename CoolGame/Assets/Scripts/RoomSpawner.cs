@@ -12,6 +12,8 @@ public class RoomSpawner : MonoBehaviour
 
     public DoorFunction myDoor;
 
+    public GameObject myTimer;
+
     public void CleanUpRoom()
     {
         foreach (GameObject a in spawnedGoons) Destroy(a);

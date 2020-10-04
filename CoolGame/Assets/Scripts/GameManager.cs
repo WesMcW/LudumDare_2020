@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Gun Stuff")]
     bool newWeapon = true;
-    int currentGun = -1;
+    GameObject currentGun;
     public List<GameObject> guns;
     public Reticle ret;
 
@@ -34,6 +35,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(!paused) gameTime += Time.deltaTime;
+        if (!activeRoom.isHall) activeRoom.myTimer.GetComponent<TextMeshProUGUI>().text = SecondsToTime(gameTime);
+        else activeRoom.nextRoom.myTimer.GetComponent<TextMeshProUGUI>().text = SecondsToTime(gameTime);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -71,14 +74,13 @@ public class GameManager : MonoBehaviour
             //get a new weapon
             int rand = Random.Range(0, guns.Count);
 
-            if (currentGun > -1) guns[currentGun].SetActive(false);
-            guns[rand].SetActive(true);
-            ret.activeGun = guns[rand].GetComponent<Gun>();
-            guns[rand].GetComponent<Gun>().SetReticle();
+            //if (currentGun) currentGun.SetActive(false);
+            currentGun = guns[rand];
+            currentGun.SetActive(true);
+            ret.activeGun = currentGun.GetComponent<Gun>();
+            currentGun.GetComponent<Gun>().SetReticle();
 
             guns.RemoveAt(rand);
-            currentGun = rand;
-
             newWeapon = false;
         }
 
@@ -88,6 +90,8 @@ public class GameManager : MonoBehaviour
 
     public string SecondsToTime(float seconds)
     {
+        if (seconds < 0) return "0:00";
+
         int minutes = Mathf.FloorToInt(seconds / 60F);
         seconds -= (float)(minutes * 60);
         seconds *= 100F;
