@@ -30,7 +30,7 @@ public class Gun : MonoBehaviour
     {
         //SetReticle();
         currAmmo = maxAmmo;
-        text.text = currAmmo + " / " + maxAmmo;
+        setText();
 
         reloading = false;
         fpsCam = GetComponentInParent<Camera>();
@@ -102,7 +102,7 @@ public class Gun : MonoBehaviour
 
         currAmmo--;
         AM.PlayShot1(audioPitch);
-        text.text = currAmmo + " / " + maxAmmo;
+        setText();
 
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, pewSpawn, out hit, range))
@@ -130,6 +130,11 @@ public class Gun : MonoBehaviour
     {
         reloading = false;
         currAmmo = maxAmmo;
+        setText();
+    }
+
+    protected virtual void setText()
+    {
         text.text = currAmmo + " / " + maxAmmo;
     }
 }

@@ -6,9 +6,9 @@ public class Particle : MonoBehaviour
 {
     public bool isOther;
 
-    private void Awake()
+    private void OnEnable()
     {
-        Invoke("ReturnToPool", 1F);
+        Invoke("ReturnToPool", .4F);
     }
 
     void ReturnToPool()
