@@ -20,6 +20,7 @@ public class RangedTargeting : MonoBehaviour
     //Does nothing atm, but will be used to make shots not 100% hit  ¯\_(ツ)_/¯
     public float accuacyOffset;
 
+    bool canShoot = true;
     private float currTime;
 
     void Start()
@@ -31,7 +32,15 @@ public class RangedTargeting : MonoBehaviour
 
     void Update()
     {
-        currTime -= Time.deltaTime;
+        if (!canShoot)
+        {
+            currTime -= Time.deltaTime;
+            if (currTime < 0)
+            {
+                canShoot = true;
+                currTime = shootCooldown;
+            }
+        }
 
         if (Vector3.Distance(transform.position, player.transform.position) > stoppingDist)
         {
@@ -61,7 +70,11 @@ public class RangedTargeting : MonoBehaviour
         {
             agent.SetDestination(this.transform.position);
             anim.SetBool("Moving", false);
-            Shoot();
+            if (canShoot)
+            {
+                canShoot = false;
+                Shoot();
+            }
         }
     }
 
@@ -69,8 +82,16 @@ public class RangedTargeting : MonoBehaviour
     {
         anim.SetBool("Shooting", true);
 
+        float x = Random.Range(-accuacyOffset, accuacyOffset);
+        float y = Random.Range(-accuacyOffset, accuacyOffset);
+        //Debug.Log("(" + x + ", " + y + ")");
+
+        Vector3 pewSpawn = new Vector3(shootPos.transform.forward.x + x, shootPos.transform.forward.y + y, shootPos.transform.forward.z);
+
+        Debug.DrawRay(shootPos.transform.position, pewSpawn * range, Color.red, 3F);
+
         RaycastHit hit;
-        if (Physics.Raycast(shootPos.position, shootPos.forward, out hit, range))
+        if (Physics.Raycast(shootPos.position, pewSpawn, out hit, range))
         {
             if (hit.transform.GetComponent<PlayerHealth>() && currTime <= 0)
             {
