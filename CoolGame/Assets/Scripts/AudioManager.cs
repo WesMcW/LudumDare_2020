@@ -22,8 +22,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource doorOpen;
     public AudioSource doorClose;
 
-    public void PlayShot1()
+    public void PlayShot1(float pitch)
     {
+        shot1.pitch = pitch;
         shot1.Play();
     }
 
