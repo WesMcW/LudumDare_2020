@@ -4467,7 +4467,7 @@ MonoBehaviour:
   isHall: 0
   nextRoom: {fileID: 1187485045}
   myRoomSpawns:
-  - spawnObject: {fileID: 5611208213173802434, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
+  - spawnObject: {fileID: 6077317617570601454, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
       type: 3}
     spawnpoint: {fileID: 1479001854}
     spawnTime: 1
@@ -6007,7 +6007,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 381340928}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 517965594}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &381340928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11740,12 +11751,12 @@ MonoBehaviour:
     spawnpoint: {fileID: 1530572115}
     spawnTime: 0
     hasSpawned: 0
-  - spawnObject: {fileID: 5611208213173802434, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
+  - spawnObject: {fileID: 6077317617570601454, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
       type: 3}
     spawnpoint: {fileID: 1121997237}
     spawnTime: 0
     hasSpawned: 0
-  - spawnObject: {fileID: 5611208213173802434, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
+  - spawnObject: {fileID: 6077317617570601454, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
       type: 3}
     spawnpoint: {fileID: 44531719}
     spawnTime: 0
@@ -18281,7 +18292,7 @@ MonoBehaviour:
     spawnpoint: {fileID: 1274058522}
     spawnTime: 0
     hasSpawned: 0
-  - spawnObject: {fileID: 7118941481058638216, guid: e73f44de95782814c81974cc64705401,
+  - spawnObject: {fileID: 6077317617570601454, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
       type: 3}
     spawnpoint: {fileID: 1536157011}
     spawnTime: 1
@@ -24430,7 +24441,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh62396
+  m_Name: pb_Mesh93876
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -30290,7 +30301,7 @@ MonoBehaviour:
   isHall: 1
   nextRoom: {fileID: 1109631864}
   myRoomSpawns:
-  - spawnObject: {fileID: 5611208213173802434, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
+  - spawnObject: {fileID: 6077317617570601454, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
       type: 3}
     spawnpoint: {fileID: 1427539892}
     spawnTime: 0
@@ -30300,7 +30311,7 @@ MonoBehaviour:
     spawnpoint: {fileID: 12166616}
     spawnTime: 1
     hasSpawned: 0
-  - spawnObject: {fileID: 5611208213173802434, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
+  - spawnObject: {fileID: 6077317617570601454, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
       type: 3}
     spawnpoint: {fileID: 642326096}
     spawnTime: 2
@@ -35022,7 +35033,7 @@ MonoBehaviour:
     spawnpoint: {fileID: 749543381}
     spawnTime: 1
     hasSpawned: 0
-  - spawnObject: {fileID: 5611208213173802434, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
+  - spawnObject: {fileID: 6077317617570601454, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
       type: 3}
     spawnpoint: {fileID: 418430114}
     spawnTime: 2
@@ -43384,12 +43395,12 @@ MonoBehaviour:
   isHall: 1
   nextRoom: {fileID: 2132319104}
   myRoomSpawns:
-  - spawnObject: {fileID: 5611208213173802434, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
+  - spawnObject: {fileID: 6077317617570601454, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
       type: 3}
     spawnpoint: {fileID: 1517267267}
     spawnTime: 0
     hasSpawned: 0
-  - spawnObject: {fileID: 5611208213173802434, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
+  - spawnObject: {fileID: 6077317617570601454, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
       type: 3}
     spawnpoint: {fileID: 702274639}
     spawnTime: 1
@@ -53914,7 +53925,7 @@ MonoBehaviour:
   isHall: 0
   nextRoom: {fileID: 465145982}
   myRoomSpawns:
-  - spawnObject: {fileID: 5611208213173802434, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
+  - spawnObject: {fileID: 6077317617570601454, guid: b86652b8fd8b34b48a1a0cd12b7cb898,
       type: 3}
     spawnpoint: {fileID: 724661521}
     spawnTime: 0
