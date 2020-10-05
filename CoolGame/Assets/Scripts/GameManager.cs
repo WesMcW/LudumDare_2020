@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        finalTime.text = gameTime.ToString();
+        finalTime.text = SecondsToTime(gameTime);
 
     }
 
