@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager inst;
 
     public float gameTime = -5f;
+    public bool win = false;
 
     [Header("Pause Stuff")]
     public bool paused = false;
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(!paused) gameTime += Time.deltaTime;
+        if(!paused && !win) gameTime += Time.deltaTime;
         activeRoom.myTimer.GetComponent<TextMeshProUGUI>().text = SecondsToTime(gameTime);
         if (activeRoom.isHall) activeRoom.nextRoom.myTimer.GetComponent<TextMeshProUGUI>().text = SecondsToTime(gameTime);
 
@@ -62,9 +63,10 @@ public class GameManager : MonoBehaviour
             if(activeEnemies.Count == 0)
             {
                 //check for win
-                if (guns.Count == 0)
+                if (guns.Count == 0 && activeRoom.isHall)
                 {
                     //win things
+                    Networking.inst.SendScore(PlayerPrefs.GetString("username"), gameTime);
                 }
                 else
                 {
