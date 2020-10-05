@@ -18481,6 +18481,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 797311344}
+    - target: {fileID: 656053426, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1733887710, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
       propertyPath: ret
       value: 
@@ -18608,6 +18612,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxAmmo
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276919966738132747, guid: f28b17913c0ef6f4fa769239e06d13e1,
+        type: 3}
+      propertyPath: damage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1276919966799988465, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
@@ -18848,6 +18857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958221636922980623, guid: f28b17913c0ef6f4fa769239e06d13e1,
+        type: 3}
+      propertyPath: mouseSensitivity
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5958221637359951414, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}

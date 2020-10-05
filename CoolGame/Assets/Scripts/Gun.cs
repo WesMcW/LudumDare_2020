@@ -73,8 +73,8 @@ public class Gun : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2") && !reloading && !shooting)
         {
-            gameObject.GetComponent<Animator>().SetTrigger("reload");
             reloading = true;
+            gameObject.GetComponent<Animator>().SetTrigger("reload");
         }
     }
 

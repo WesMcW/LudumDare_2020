@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ButtStuff : MonoBehaviour
 {
+    Animator anim;
+    public GameObject winScreen;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     public void LoadGame()
     {
         SceneManager.LoadScene(1);
@@ -23,5 +31,10 @@ public class ButtStuff : MonoBehaviour
     public void MuteSong()
     {
         AudioManager.inst.song.volume = 0f;
+    }
+
+    public void WinScreen()
+    {
+        winScreen.SetActive(true);
     }
 }
