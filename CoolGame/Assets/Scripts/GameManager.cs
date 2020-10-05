@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public float gameTime = -5f;
     public bool win = false;
+    public TextMeshProUGUI finalTime;
 
     [Header("Pause Stuff")]
     public bool paused = false;
@@ -79,6 +80,9 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        finalTime.text = gameTime.ToString();
+
     }
 
     public void StartRoom()
