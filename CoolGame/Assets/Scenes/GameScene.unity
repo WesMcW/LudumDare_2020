@@ -19399,6 +19399,10 @@ PrefabInstance:
       propertyPath: shootCooldown
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1733887710, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: damage
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 1824162644, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
       propertyPath: ret
       value: 
@@ -19421,6 +19425,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2129239044, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
       propertyPath: shootCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2129239044, guid: f28b17913c0ef6f4fa769239e06d13e1, type: 3}
+      propertyPath: damage
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 194290457979957496, guid: f28b17913c0ef6f4fa769239e06d13e1,

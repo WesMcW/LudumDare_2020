@@ -110,7 +110,7 @@ public class Gun : MonoBehaviour
             if (hit.transform.CompareTag("head"))
             {
                 Debug.Log("HEAD SHOT");
-                hit.transform.GetComponent<HealthRef>().myHealth.TakeDamage(damage * 2F);
+                hit.transform.GetComponent<HealthRef>().myHealth.TakeDamage(damage * 3F);
                 ParticlePool.inst.UseFromPool(hit.point);
             }
             else if (hit.transform.GetComponent<EnemyHealth>())
