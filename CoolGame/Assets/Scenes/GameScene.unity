@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -7386,7 +7386,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &376409711
 GameObject:
@@ -22203,7 +22203,7 @@ PrefabInstance:
     - target: {fileID: 5958221636922980623, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
       propertyPath: mouseSensitivity
-      value: 200
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5958221636922980623, guid: f28b17913c0ef6f4fa769239e06d13e1,
         type: 3}
@@ -33332,7 +33332,7 @@ Transform:
   - {fileID: 1639776933}
   - {fileID: 1948895715}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1187485045
 MonoBehaviour:
@@ -49950,7 +49950,7 @@ Transform:
   - {fileID: 141174371}
   - {fileID: 1027083756}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1814241682
 MonoBehaviour:
