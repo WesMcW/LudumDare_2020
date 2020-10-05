@@ -115,7 +115,7 @@ public class Gun : MonoBehaviour
                 {
                     Debug.Log("HEAD SHOT");
                     hit.transform.GetComponent<HealthRef>().myHealth.TakeDamage(damage * 3F);
-                    ParticlePool.inst.UseFromPool(hit.point);
+                    ParticlePool.inst.UseFromThirdPool(hit.point);
                 }
             }
             else if (hit.transform.GetComponent<EnemyHealth>())

@@ -30,18 +30,28 @@ public class ShotGun : Gun
             RaycastHit hit;
             if (Physics.Raycast(fpsCam.transform.position, pewSpawn, out hit, range, layers))
             {
-                if (hit.transform.GetComponent<EnemyHealth>())
+                if (hit.transform.CompareTag("head"))
                 {
-                    hit.transform.GetComponent<EnemyHealth>().TakeDamage(damage);
-                    ParticlePool.inst.UseFromPool(hit.point);
+                    if (hit.transform.gameObject.GetComponent<HealthRef>().myHealth.dead == false)
+                    {
+                        Debug.Log("HEAD SHOT");
+                        hit.transform.GetComponent<HealthRef>().myHealth.TakeDamage(damage * 3F);
+                        ParticlePool.inst.UseFromThirdPool(hit.point);
+                    }
+                }
+                else if (hit.transform.GetComponent<EnemyHealth>())
+                {
+                    if (hit.transform.gameObject.GetComponent<EnemyHealth>().dead == false)
+                    {
+                        hit.transform.GetComponent<EnemyHealth>().TakeDamage(damage);
+                        ParticlePool.inst.UseFromPool(hit.point);
+                    }
                 }
                 else
                 {
                     ParticlePool.inst.UseFromOtherPool(hit.point);
                 }
             }
-
-            //currTime = shootCooldown;
         }
 
         setText();

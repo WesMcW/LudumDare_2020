@@ -55305,6 +55305,8 @@ MonoBehaviour:
     type: 3}
   otherParticle: {fileID: 3820705869415616128, guid: d32eab8e7d325194e894fee267112482,
     type: 3}
+  thirdParticle: {fileID: 7271009402638229408, guid: d058518c7a2561043a85c6f068872def,
+    type: 3}
 --- !u!82 &2046528097
 AudioSource:
   m_ObjectHideFlags: 0

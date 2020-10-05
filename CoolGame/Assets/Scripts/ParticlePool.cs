@@ -12,11 +12,15 @@ public class ParticlePool : MonoBehaviour
     public GameObject otherParticle;
     List<GameObject> otherPool;
 
+    public GameObject thirdParticle;
+    List<GameObject> thirdPool;
+
     void Awake()
     {
         inst = this;
         pool = new List<GameObject>();
         otherPool = new List<GameObject>();
+        thirdPool = new List<GameObject>();
     }
 
     public void ReturnToPool(GameObject thing)
@@ -65,5 +69,29 @@ public class ParticlePool : MonoBehaviour
         {
             Instantiate(otherParticle, location, Quaternion.identity);
         }
+    }
+
+    public void UseFromThirdPool(Vector3 location)
+    {
+        GameObject newParticle;
+
+        if (thirdPool.Count > 0)
+        {
+            newParticle = thirdPool[0];
+            thirdPool.RemoveAt(0);
+
+            newParticle.transform.position = location;
+            newParticle.SetActive(true);
+        }
+        else
+        {
+            Instantiate(thirdParticle, location, Quaternion.identity);
+        }
+    }
+
+    public void ReturnToThirdPool(GameObject thing)
+    {
+        thirdPool.Add(thing);
+        thing.SetActive(false);
     }
 }

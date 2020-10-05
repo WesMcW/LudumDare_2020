@@ -5,6 +5,7 @@ using UnityEngine;
 public class Particle : MonoBehaviour
 {
     public bool isOther;
+    public bool isThird;
 
     private void OnEnable()
     {
@@ -13,7 +14,8 @@ public class Particle : MonoBehaviour
 
     void ReturnToPool()
     {
-        if(isOther) ParticlePool.inst.ReturnToOtherPool(gameObject);
+        if (isOther) ParticlePool.inst.ReturnToOtherPool(gameObject);
+        else if (isThird) ParticlePool.inst.ReturnToThirdPool(gameObject);
         else ParticlePool.inst.ReturnToPool(gameObject);
     }
 }
