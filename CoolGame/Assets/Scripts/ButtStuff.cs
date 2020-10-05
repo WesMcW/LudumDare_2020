@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ButtStuff : MonoBehaviour
 {
+    public GameObject mute;
+    public bool muted;
 
     public void LoadGame()
     {
@@ -23,6 +26,17 @@ public class ButtStuff : MonoBehaviour
 
     public void MuteSong()
     {
-        AudioManager.inst.song.volume = 0f;
+        if (muted)
+        {
+            AudioManager.inst.song.volume = .1f;
+            mute.SetActive(false);
+            muted = false;
+        }
+        else if(!muted)
+        {
+            AudioManager.inst.song.volume = 0f;
+            mute.SetActive(true);
+            muted = true;
+        }
     }
 }
