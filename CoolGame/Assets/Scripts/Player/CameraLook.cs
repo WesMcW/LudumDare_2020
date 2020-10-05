@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraLook : MonoBehaviour
 {
     public float mouseSensitivity = 100f;
     public Transform playerBody;
+    public Slider sesnitivity;
 
     float xRotation = 0f;
 
@@ -13,6 +15,7 @@ public class CameraLook : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        sesnitivity.value = mouseSensitivity;
     }
 
     void Update()
@@ -25,5 +28,10 @@ public class CameraLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+    }
+
+    public void MouseSensitevity()
+    {
+        mouseSensitivity = sesnitivity.value;
     }
 }
