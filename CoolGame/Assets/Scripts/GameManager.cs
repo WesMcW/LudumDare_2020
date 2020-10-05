@@ -109,7 +109,12 @@ public class GameManager : MonoBehaviour
             newWeapon = false;
         }
 
-        activeEnemies = activeRoom.SpawnAll();
+        activeRoom.SpawnAll();
+    }
+
+    public void GiveEnemies(List<GameObject> enemies)
+    {
+        activeEnemies = enemies;
         inBattle = true;
     }
 

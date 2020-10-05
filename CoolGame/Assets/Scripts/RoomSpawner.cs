@@ -8,27 +8,26 @@ public class RoomSpawner : MonoBehaviour
     public RoomSpawner nextRoom;
 
     public List<Spawner> myRoomSpawns;
-    List<GameObject> spawnedGoons;
+    List<GameObject> goons;
 
     public DoorFunction myDoor;
 
     public GameObject myTimer;
     public GameObject[] myXs;
 
-    public void CleanUpRoom()
+    public void SpawnAll()
     {
-        foreach (GameObject a in spawnedGoons) Destroy(a);
-    }
-
-    public List<GameObject> SpawnAll()
-    {
-        List<GameObject> active = new List<GameObject>();
-        float maxTime = largestTime();
-        float time = 0;
+        goons = new List<GameObject>();
         
+        for(int i = 0; i < myRoomSpawns.Count; i++)
+        {
+            StartCoroutine(SpawnThing(i, myRoomSpawns[i].spawnTime));
+        }
+
+        /*
         while(time <= maxTime)
         {
-            time += Time.deltaTime;
+            //time += Time.deltaTime;
             foreach (Spawner a in myRoomSpawns)
             {
                 if (a.spawnTime <= time && !a.hasSpawned)
@@ -38,11 +37,49 @@ public class RoomSpawner : MonoBehaviour
                     active.Add(newSpawn);
                 }
             }
+            Debug.Log("before time: " + time);
+            time += Time.deltaTime;
+            Debug.Log("after time: " + time);
         }
 
+        foreach (Spawner a in myRoomSpawns)
+        {
+            if (!a.hasSpawned)
+            {
+                a.hasSpawned = true;
+                GameObject newSpawn = Instantiate(a.spawnObject, a.spawnpoint.position, Quaternion.identity);
+                active.Add(newSpawn);
+            }
+        }
+
+        Debug.Log("spawns completed");
+
         foreach (Spawner a in myRoomSpawns) a.hasSpawned = false;
-        spawnedGoons = active;
-        return active;
+        return active;*/
+    }
+
+    void CheckForSpawnsFinished(GameObject add)
+    {
+        goons.Add(add);
+
+        bool ready = true;
+        foreach (Spawner a in myRoomSpawns) if (!a.hasSpawned) ready = false;
+
+        if (ready)
+        {
+            Debug.Log("spawns completed");
+            GameManager.inst.GiveEnemies(goons);
+        }
+    }
+
+    IEnumerator SpawnThing(int index, float time)
+    {
+        GameObject spawned;
+        yield return new WaitForSeconds(time);
+
+        myRoomSpawns[index].hasSpawned = true;
+        spawned = Instantiate(myRoomSpawns[index].spawnObject, myRoomSpawns[index].spawnpoint.position, Quaternion.identity);
+        CheckForSpawnsFinished(spawned);
     }
 
     float largestTime()

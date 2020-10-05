@@ -24,11 +24,15 @@ public class EnemyHealth : MonoBehaviour
     {
         currHealth -= amt;
 
-        if(currHealth <= 0)
+        if(currHealth <= 0 && !dead)
         {
             dead = true;
             gameObject.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().material = black;
-            GameManager.inst.activeEnemies.Remove(gameObject);
+
+            if (GameManager.inst.inBattle) GameManager.inst.activeEnemies.Remove(gameObject);
+            else Invoke("CheckForBattle", 0.5F);
+
+
             gameObject.GetComponent<Animator>().SetTrigger("Dead");
 
             int rand = Random.Range(0, 4);
@@ -45,7 +49,13 @@ public class EnemyHealth : MonoBehaviour
             //gameObject.GetComponent<Animator>().SetTrigger("Dead");
             Destroy(gameObject.GetComponent<NavMeshAgent>());
             Destroy(gameObject.GetComponent<Collider>());
-            Destroy(gameObject.GetComponent<EnemyHealth>());
+            //Destroy(gameObject.GetComponent<EnemyHealth>());
         }
+    }
+
+    void CheckForBattle()
+    {
+        if (GameManager.inst.inBattle) GameManager.inst.activeEnemies.Remove(gameObject);
+        else Invoke("CheckForBattle", 0.5F);
     }
 }
