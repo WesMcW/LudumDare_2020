@@ -19,9 +19,9 @@ public class TitleFunctions : MonoBehaviour
         }
     }
 
-    public void Play()
+    public void Quit()
     {
-        
+        Application.Quit();
     }
 
     public void ValidateName()

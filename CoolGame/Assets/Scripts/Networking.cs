@@ -22,6 +22,7 @@ public class Networking : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         socket = GetComponent<SocketIOComponent>();
+        if (!socket) Debug.LogError("uh oh");
         socket.Connect();
     }
 
