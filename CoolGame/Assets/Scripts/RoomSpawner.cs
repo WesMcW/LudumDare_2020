@@ -68,6 +68,7 @@ public class RoomSpawner : MonoBehaviour
         if (ready)
         {
             Debug.Log("spawns completed");
+            foreach (Spawner a in myRoomSpawns) a.hasSpawned = false;
             GameManager.inst.GiveEnemies(goons);
         }
     }
