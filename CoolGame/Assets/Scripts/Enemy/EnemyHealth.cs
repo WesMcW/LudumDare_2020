@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth;
     public float currHealth;
+    public bool dead;
+    public Material black;
 
     void Start()
     {
@@ -24,6 +26,8 @@ public class EnemyHealth : MonoBehaviour
 
         if(currHealth <= 0)
         {
+            dead = true;
+            gameObject.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().material = black;
             GameManager.inst.activeEnemies.Remove(gameObject);
             gameObject.GetComponent<Animator>().SetTrigger("Dead");
 
