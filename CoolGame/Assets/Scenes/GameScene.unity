@@ -26817,11 +26817,6 @@ MonoBehaviour:
     spawnpoint: {fileID: 1619426733}
     spawnTime: 0
     hasSpawned: 0
-  - spawnObject: {fileID: 7118941481058638216, guid: e73f44de95782814c81974cc64705401,
-      type: 3}
-    spawnpoint: {fileID: 1425442019}
-    spawnTime: 0
-    hasSpawned: 0
   myDoor: {fileID: 510388781}
   myTimer: {fileID: 1811126166}
   myXs:
