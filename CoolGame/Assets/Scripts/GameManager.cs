@@ -39,12 +39,22 @@ public class GameManager : MonoBehaviour
         activeRoom.myTimer.GetComponent<TextMeshProUGUI>().text = SecondsToTime(gameTime);
         if (activeRoom.isHall) activeRoom.nextRoom.myTimer.GetComponent<TextMeshProUGUI>().text = SecondsToTime(gameTime);
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             paused = !paused;
             pauseMenu.SetActive(paused);
-            if (paused) Time.timeScale = 0;
-            else Time.timeScale = 1;
+            if (paused)
+            {
+                Time.timeScale = 0;
+                //Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else
+            {
+                //Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1;
+            }
         }
 
         if (inBattle)

@@ -19,4 +19,9 @@ public class ButtStuff : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void MuteSong()
+    {
+        AudioManager.inst.song.volume = 0f;
+    }
 }
