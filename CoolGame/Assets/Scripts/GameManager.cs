@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
                 if (guns.Count == 0 && activeRoom.isHall)
                 {
                     //win things
-                    Networking.inst.SendScore(PlayerPrefs.GetString("username"), gameTime);
+                    //Networking.inst.SendScore(PlayerPrefs.GetString("username"), gameTime);
                     win = true;
                 }
                 else
