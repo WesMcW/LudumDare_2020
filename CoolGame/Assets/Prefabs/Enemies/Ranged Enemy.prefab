@@ -1634,6 +1634,9 @@ MonoBehaviour:
   lookSpeed: 5
   shootPos: {fileID: 6383731514296735524}
   flash: {fileID: 6383731514285758342}
+  layers:
+    serializedVersion: 2
+    m_Bits: 311
   accuacyOffset: 0.03
 --- !u!1 &6267320752747433418
 GameObject:

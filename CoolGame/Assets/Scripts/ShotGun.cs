@@ -28,7 +28,7 @@ public class ShotGun : Gun
             AM.PlayShot1(audioPitch);
 
             RaycastHit hit;
-            if (Physics.Raycast(fpsCam.transform.position, pewSpawn, out hit, range))
+            if (Physics.Raycast(fpsCam.transform.position, pewSpawn, out hit, range, layers))
             {
                 if (hit.transform.GetComponent<EnemyHealth>())
                 {

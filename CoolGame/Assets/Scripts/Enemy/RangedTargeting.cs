@@ -18,6 +18,8 @@ public class RangedTargeting : MonoBehaviour
     public Transform shootPos;
     public ParticleSystem flash;
 
+    public LayerMask layers;
+
     //Does nothing atm, but will be used to make shots not 100% hit  ¯\_(ツ)_/¯
     public float accuacyOffset;
 
@@ -96,7 +98,7 @@ public class RangedTargeting : MonoBehaviour
             //Debug.DrawRay(shootPos.transform.position, pewSpawn * range, Color.red, 3F);
 
             RaycastHit hit;
-            if (Physics.Raycast(shootPos.position, pewSpawn, out hit, range))
+            if (Physics.Raycast(shootPos.position, pewSpawn, out hit, range, layers))
             {
                 if (hit.transform.GetComponent<PlayerHealth>())
                 {

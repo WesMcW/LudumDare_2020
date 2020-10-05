@@ -26,6 +26,8 @@ public class Gun : MonoBehaviour
     protected bool reloading;
     protected AudioManager AM;
 
+    public LayerMask layers;
+
     protected void Start()
     {
         //SetReticle();
@@ -105,7 +107,7 @@ public class Gun : MonoBehaviour
         setText();
 
         RaycastHit hit;
-        if(Physics.Raycast(fpsCam.transform.position, pewSpawn, out hit, range))
+        if(Physics.Raycast(fpsCam.transform.position, pewSpawn, out hit, range, layers))
         {
             if (hit.transform.CompareTag("head"))
             {
