@@ -1612,6 +1612,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currHealth: 0
+  dead: 0
+  black: {fileID: 2100000, guid: d0eb18f3ff7cc2a44a98bcfee233bdf6, type: 2}
 --- !u!114 &6077317617570601427
 MonoBehaviour:
   m_ObjectHideFlags: 0
