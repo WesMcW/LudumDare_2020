@@ -47,12 +47,12 @@ public class GameManager : MonoBehaviour
             if (paused)
             {
                 Time.timeScale = 0;
-                //Cursor.visible = false;
+                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             }
             else
             {
-                //Cursor.visible = false;
+                Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
                 Time.timeScale = 1;
             }
