@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         if (inst) Destroy(gameObject);
         else inst = this;
 
-        Invoke("StartRoom", 5F);
+        Invoke("StartRoom", 3F);
     }
 
     void Update()

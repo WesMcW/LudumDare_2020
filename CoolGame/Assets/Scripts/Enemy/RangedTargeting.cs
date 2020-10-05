@@ -16,6 +16,7 @@ public class RangedTargeting : MonoBehaviour
     public float stoppingDist;
     public float lookSpeed;
     public Transform shootPos;
+    public ParticleSystem flash;
 
     //Does nothing atm, but will be used to make shots not 100% hit  ¯\_(ツ)_/¯
     public float accuacyOffset;
@@ -80,23 +81,28 @@ public class RangedTargeting : MonoBehaviour
 
     public void Shoot()
     {
-        anim.SetBool("Shooting", true);
-
-        float x = Random.Range(-accuacyOffset, accuacyOffset);
-        float y = Random.Range(-accuacyOffset, accuacyOffset);
-        //Debug.Log("(" + x + ", " + y + ")");
-
-        Vector3 pewSpawn = new Vector3(shootPos.transform.forward.x + x, shootPos.transform.forward.y + y, shootPos.transform.forward.z);
-
-        //Debug.DrawRay(shootPos.transform.position, pewSpawn * range, Color.red, 3F);
-
-        RaycastHit hit;
-        if (Physics.Raycast(shootPos.position, pewSpawn, out hit, range))
+        if (player.GetComponent<PlayerHealth>().currHealth > 0)
         {
-            if (hit.transform.GetComponent<PlayerHealth>())
+            anim.SetBool("Shooting", true);
+            AudioManager.inst.PlayShot1(.9f);
+            flash.Play();
+
+            float x = Random.Range(-accuacyOffset, accuacyOffset);
+            float y = Random.Range(-accuacyOffset, accuacyOffset);
+            //Debug.Log("(" + x + ", " + y + ")");
+
+            Vector3 pewSpawn = new Vector3(shootPos.transform.forward.x + x, shootPos.transform.forward.y + y, shootPos.transform.forward.z);
+
+            //Debug.DrawRay(shootPos.transform.position, pewSpawn * range, Color.red, 3F);
+
+            RaycastHit hit;
+            if (Physics.Raycast(shootPos.position, pewSpawn, out hit, range))
             {
-                hit.transform.GetComponent<PlayerHealth>().TakeDamage(damage);
-                currTime = shootCooldown;
+                if (hit.transform.GetComponent<PlayerHealth>())
+                {
+                    hit.transform.GetComponent<PlayerHealth>().TakeDamage(damage);
+                    currTime = shootCooldown;
+                }
             }
         }
     }
