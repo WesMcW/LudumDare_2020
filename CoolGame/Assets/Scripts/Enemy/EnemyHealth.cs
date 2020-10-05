@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth;
     public float currHealth;
+    public bool dead;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
 
         if(currHealth <= 0)
         {
+            dead = true;
             GameManager.inst.activeEnemies.Remove(gameObject);
             gameObject.GetComponent<Animator>().SetTrigger("Dead");
 

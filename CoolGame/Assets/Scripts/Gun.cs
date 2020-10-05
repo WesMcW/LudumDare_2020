@@ -109,14 +109,20 @@ public class Gun : MonoBehaviour
         {
             if (hit.transform.CompareTag("head"))
             {
-                Debug.Log("HEAD SHOT");
-                hit.transform.GetComponent<HealthRef>().myHealth.TakeDamage(damage * 3F);
-                ParticlePool.inst.UseFromPool(hit.point);
+                if (hit.transform.gameObject.GetComponent<HealthRef>().myHealth.dead == false)
+                {
+                    Debug.Log("HEAD SHOT");
+                    hit.transform.GetComponent<HealthRef>().myHealth.TakeDamage(damage * 3F);
+                    ParticlePool.inst.UseFromPool(hit.point);
+                }
             }
             else if (hit.transform.GetComponent<EnemyHealth>())
             {
-                hit.transform.GetComponent<EnemyHealth>().TakeDamage(damage);
-                ParticlePool.inst.UseFromPool(hit.point);
+                if (hit.transform.gameObject.GetComponent<EnemyHealth>().dead == false)
+                {
+                    hit.transform.GetComponent<EnemyHealth>().TakeDamage(damage);
+                    ParticlePool.inst.UseFromPool(hit.point);
+                }
             }
             else
             {
