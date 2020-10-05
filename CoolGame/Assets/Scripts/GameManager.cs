@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         activeRoom.myTimer.GetComponent<TextMeshProUGUI>().text = SecondsToTime(gameTime);
         if (activeRoom.isHall) activeRoom.nextRoom.myTimer.GetComponent<TextMeshProUGUI>().text = SecondsToTime(gameTime);
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             paused = !paused;
             pauseMenu.SetActive(paused);
