@@ -25,5 +25,6 @@ public class SetFade : MonoBehaviour
     {
         winScreen.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
