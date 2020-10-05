@@ -44,7 +44,7 @@ public class Gun : MonoBehaviour
 
         if (!fullAuto)
         {
-            if (Input.GetButtonDown("Fire1") && currTime <= 0 && currAmmo > 0 && !reloading && !GameManager.inst.paused)
+            if (Input.GetButtonDown("Fire1") && currTime <= 0 && currAmmo > 0 && !reloading && !GameManager.inst.paused && !GameManager.inst.win)
             {
                 //PewPew();
                 gameObject.GetComponent<Animator>().SetTrigger("BOOP");
@@ -58,7 +58,7 @@ public class Gun : MonoBehaviour
         }
         else if (fullAuto)
         {
-            if (Input.GetButton("Fire1") && currTime <= 0 && currAmmo > 0 && !reloading && !GameManager.inst.paused)
+            if (Input.GetButton("Fire1") && currTime <= 0 && currAmmo > 0 && !reloading && !GameManager.inst.paused && !GameManager.inst.win)
             {
                 //PewPew();
                 gameObject.GetComponent<Animator>().SetTrigger("BOOP");
