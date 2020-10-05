@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
                 {
                     //win things
                     Networking.inst.SendScore(PlayerPrefs.GetString("username"), gameTime);
+                    win = true;
                 }
                 else
                 {
