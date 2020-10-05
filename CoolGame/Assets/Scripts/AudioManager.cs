@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource deth1;
     public AudioSource deth2;
     public AudioSource deth3;
+    public AudioSource song;
 
     public void PlayShot1(float pitch)
     {
@@ -61,5 +62,15 @@ public class AudioManager : MonoBehaviour
             deth3.pitch = rand;
             deth3.Play();
         }
+    }
+
+    public void PlaySong()
+    {
+        song.Play();
+    }
+
+    private void Start()
+    {
+        Invoke("PlaySong", 3F);
     }
 }
