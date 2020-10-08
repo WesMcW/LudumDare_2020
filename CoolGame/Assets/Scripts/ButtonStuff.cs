@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ButtStuff : MonoBehaviour
+public class ButtonStuff : MonoBehaviour
 {
     public GameObject mute;
     public bool muted;
@@ -29,12 +29,24 @@ public class ButtStuff : MonoBehaviour
         if (muted)
         {
             AudioManager.inst.song.volume = .1f;
+            AudioManager.inst.deth1.volume = .3f;
+            AudioManager.inst.deth2.volume = .3f;
+            AudioManager.inst.deth3.volume = .3f;
+            AudioManager.inst.doorClose.volume = .3f;
+            AudioManager.inst.doorOpen.volume = .3f;
+            AudioManager.inst.shot1.volume = .3f;
             mute.SetActive(false);
             muted = false;
         }
         else if(!muted)
         {
             AudioManager.inst.song.volume = 0f;
+            AudioManager.inst.deth1.volume = 0f;
+            AudioManager.inst.deth2.volume = 0f;
+            AudioManager.inst.deth3.volume = 0f;
+            AudioManager.inst.doorClose.volume = 0f;
+            AudioManager.inst.doorOpen.volume = 0f;
+            AudioManager.inst.shot1.volume = 0f;
             mute.SetActive(true);
             muted = true;
         }
